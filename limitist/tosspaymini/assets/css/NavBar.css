@@ -1,0 +1,52 @@
+.nav-bar {
+    width: 100%;
+    margin: 0;
+    padding: 8px 0 6px 0;
+    color: #ffffff;
+    background-color: #4e7bfa;
+}
+
+.nav-bar a {
+    color: #ffffff;
+}
+
+.nav-bar .nav-bar-btn {
+    margin-top: -0.2em;
+    padding: 0;
+}
+
+.nav-bar .nav-bar-btn .glyphicon {
+    display: inline-block;
+    font-size: 1.4rem;
+    vertical-align: middle;
+}
+
+.nav-bar .nav-bar-btn .nav-bar-btn-label {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.nav-bar .nav-bar-btn-left {
+    float: left;
+    margin-left: 12px;
+}
+
+.nav-bar .nav-bar-btn-right {
+    float: right;
+    margin-right: 12px;
+}
+
+.nav-bar h1 {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 480px) {
+    #toss-web-pay .wrapper .nav-bar {
+        border-radius: 4px 4px 0 0;
+    }
+}

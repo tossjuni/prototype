@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!--    <link rel="import" href="WebpayHead.html">-->
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss로 결제</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Toss">
+    <meta name="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss">
+    <meta itemprop="description" content="Toss">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss">
+    <meta name="og:description" content="Toss">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image.png">
+    <meta name="og:url" content="https://toss.im/">
+    <meta name="og:site_name" content="Toss">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-2.0.1.css" rel="stylesheet">
+    <!-- Service CSS -->
+    <link href="https://toss.im/frame/services/insurance/insurance-1.0.0.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W587HKK');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W587HKK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-insurance">
+        <div class="wrapper">
+            <div class="content">
+                <div class="info">
+                    <h2>계약전 질문 사항</h2>
+                    <p class="mb-0">모든 가입자에 대해 질문에 대한 답이 '아니오'면 체크해주세요.</p>
+                    <p class="text-danger">* 질문의 답변이 사실과 다를 시에는 보험유지 또는 보험금 지급에 영향을 미칠 수 있습니다.</p>
+                </div>
+                <section class="person-inquire">
+                    <div class="info">
+
+                    </div>
+                    <ul class="terms-agreement">
+                        <li class="term-row term-all-agree">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="input1" value="1">모두 '아니오'
+                            </label>
+                        </li>
+                        <li class="term-row">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="input1" value="1">최근 5년 이내에 암, 백혈병, 고혈압, 협심증, 심근경색, 심장판막증, 간경화, 뇌졸중 (뇌출혈, 뇌경색), 에이즈 및 HIV 보균으로 진단/치료를 받은 적이 있습니까?
+                            </label>
+                        </li>
+                        <li class="term-row">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="input1" value="1">기능장애 또는 유전성 질환을 가지고 계십니까?
+                            </label>
+                        </li>
+                        <li class="term-row">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="input1" value="1">현재 외국에 거주중이거나 가입하는 장소가 외국이십니까?
+                            </label>
+                        </li>
+                        <li class="term-row">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="input1" value="1">위험한 운동이나 전문적인 체육/운동대회 참가를 목적으로 출국하십니까? <br>(스키, 전문등반, 레프팅, 기타 레포츠 및 공식운동경기 등)
+                            </label>
+                        </li>
+                        <li class="term-row">
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="input1" value="1">여행 지역이 여행 금지 국가입니까?<br>
+                                <a class="btn btn-sm btn-outline-warning" href="http://www.0404.go.kr/m/dev/main.do" alt="여행 제한/금지지역 확인">여행제한/금지지역 확인</a>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <a href="06_payment.html" class="btn btn-accent btn-lg btn-block">다음</a>
+                <a href="04_agreement.html" class="btn btn-outline-accent btn-lg btn-block">이전 단계</a>
+            </div>
+            <footer>
+                <p class="poweredBy">
+                    powered by INBYU
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+    <script>
+        $(document).ready(function() {});
+    </script>
+
+</body>
+
+</html>

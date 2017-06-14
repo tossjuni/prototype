@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <style type="text/css">
+
+    </style>
+  </head>
+  <body class="text-center">
+    <div class="m-t-lg"></div>
+      <a id="start-pay" href="">결제 시작</a>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+      $("#start-pay").click(function(){
+        window.open("pay.html", "", "width=386, height=536, top=200, left=500");  // Opens a new window
+      })
+    </script>
+  </body>
+</html>

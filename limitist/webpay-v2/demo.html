@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!--    <link rel="import" href="WebpayHead.html">-->
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss로 결제</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta name="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss로 결제">
+    <meta itemprop="description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss로 결제">
+    <meta name="og:description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image.png">
+    <meta name="og:url" content="https://toss.im/pay">
+    <meta name="og:site_name" content="Toss로 결제">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-1.1.8.css" type="text/css" rel="stylesheet">
+    <!-- Toss 웹결제 layout CSS -->
+    <link href="assets/css/tossWebPay.css" type="text/css" rel="stylesheet">
+    <!-- Toss 웹결제 UI component CSS -->
+    <link href="assets/css/NavBar.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/SignupForm.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/SignupTerm.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5JGVQH5');
+
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JGVQH5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-web-pay">
+        <div class="wrapper">
+            <div class="nav-bar">
+                <h1><i class="i-logotype"></i> 결제 Demo</h1>
+            </div>
+            <div class="content">
+                <form>
+                    <div class="wrapper-input">
+                        <div class="form-group">
+                            <label>상점명</label>
+                            <input type="text" class="form-control input" id="input-productDesc" value="토스 테스트상점" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>결제 금액 (amount)</label>
+                            <input type="number" class="form-control input" id="input-amount" value=9900>
+                        </div>
+                        <div class="form-group">
+                            <label>상품명 (productDesc)</label>
+                            <input type="text" class="form-control input" id="input-productDesc" value="테스트 상품">
+                        </div>
+                        <div class="form-group">
+                            <label>결제창 타입 (checkoutType)</label>
+                            <span class="pull-right text-danger" style="font-size:13px;line-height:1em;margin-top:0.5em;"><em>Beta</em></span>
+                            <select class="form-control select">
+                                <option>Web/App 모두 지원 (both)</option>
+                                <option>Web만 지원 (web)</option>
+                                <option>App만 지원 (app)</option>
+                            </select>
+                        </div>
+                        <hr style="border-color:#ccc;">
+                        <div class="form-group">
+                            <label>결제 완료 후 연결할 URL (retUrl)</label>
+                            <input type="text" class="form-control input" id="input-retUrl" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>결제 최종 승인 방식 (autoExecute)</label>
+                            <span class="pull-right text-primary" style="font-size:13px;line-height:1em;margin-top:0.5em;"><a href="http://tossdev.github.io/gettingstarted.html#execute" style="color:#4e7bfa;text-decoration:underline;">자세히</a></span>
+                            <select class="form-control select">
+                                <option>구매자 승인 시 자동 완료 (true)</option>
+                                <option>가맹점 최종 승인 후 완료 (false)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>결제 결과 callback 받을 URL (resultCallback)</label>
+                            <input type="text" class="form-control input" id="input-retUrl" value="">
+                        </div>
+                    </div>
+                    <a href="signupPrepare.html" class="btn btn-accent btn-block">결제 생성하기</a>
+                </form>
+            </div>
+            <footer>
+                <p class="poweredByToss">
+                    powered by <i class="i-logotype"></i>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+    <script>
+        $(document).ready(function() {});
+
+    </script>
+
+</body>
+
+</html>

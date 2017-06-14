@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss로 결제</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta name="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss로 결제">
+    <meta itemprop="description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss로 결제">
+    <meta name="og:description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image.png">
+    <meta name="og:url" content="https://toss.im/pay">
+    <meta name="og:site_name" content="Toss로 결제">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-1.1.8.css" type="text/css" rel="stylesheet">
+    <!-- Toss 웹결제 layout CSS -->
+    <link href="assets/css/tossWebPay.css" type="text/css" rel="stylesheet">
+    <!-- Toss 웹결제 UI component CSS -->
+    <link href="assets/css/NavBar.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/PasswordKeyboard.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/tosspaymini.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5JGVQH5');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JGVQH5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-web-pay">
+        <div class="wrapper">
+            <div class="content">
+                <div class="info">
+                    <h3>
+                        계산할 금액을 입력하세요.
+                    </h3>
+                    <!--                    <p class="pay-amount"></p>-->
+                    <input class="pay-amount" type="tel" onchange="getNumber(this);" onkeyup="getNumber(this);" style="outline: none" autofocus>
+                </div>
+                <div class="password-keyboard">
+                    <div class="password-keyboard-keypad">
+                        <table class="number">
+                            <tr>
+                                <td><a class="key" href="#">1</a></td>
+                                <td><a class="key" href="#">2</a></td>
+                                <td><a class="key" href="#">3</a></td>
+                                <td><a class="key" href="#">4</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="key" href="#">5</a></td>
+                                <td><a class="key" href="#">6</a></td>
+                                <td><a class="key" href="#">7</a></td>
+                                <td><a class="key" href="#">8</a></td>
+                            </tr>
+                            <tr>
+                                <td><a class="key" href="#">9</a></td>
+                                <td><a class="key" href="#">0</a></td>
+                                <td></td>
+                                <td><a href="#"><span class="glyphicon glyphicon-arrow-left"></span></a></td>
+                            </tr>
+                        </table>
+                        <a href="auth.html" id="cta-keyboard" class="btn btn-accent btn-block">계산하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+    <script>
+        $(document).ready(function () {});
+
+        function removeComma(str) {
+            n = parseInt(str.replace(/,/g, ""));
+            return n;
+        }
+
+        function AddComma(data_value) {
+
+            var txtNumber = '' + data_value; // 입력된 값을 문자열 변수에 저장합니다.
+
+            if (isNaN(txtNumber) || txtNumber == "") { // 숫자 형태의 값이 정상적으로 입력되었는지 확인합니다.
+                alert("숫자만 입력 하세요");
+                return;
+            } else {
+                var rxSplit = new RegExp('([0-9])([0-9][0-9][0-9][,.])'); // 정규식 형태 생성
+                var arrNumber = txtNumber.split('.'); // 입력받은 숫자를 . 기준으로 나눔. (정수부와 소수부분으로 분리)
+                arrNumber[0] += '.'; // 정수부 끝에 소수점 추가
+
+                do {
+                    arrNumber[0] = arrNumber[0].replace(rxSplit, '$1,$2'); // 정수부에서 rxSplit 패턴과 일치하는 부분을 찾아 replace 처리
+                } while (rxSplit.test(arrNumber[0])); // 정규식 패턴 rxSplit 가 정수부 내에 있는지 확인하고 있다면 true 반환. 루프 반복.
+
+                if (arrNumber.length > 1) { // txtNumber를 마침표(.)로 분리한 부분이 2개 이상이라면 (즉 소수점 부분도 있다면)
+                    return arrNumber.join(''); // 배열을 그대로 합칩. (join 함수에 인자가 있으면 인자를 구분값으로 두고 합침)
+                } else { // txtNumber 길이가 1이라면 정수부만 있다는 의미.
+                    return arrNumber[0].split('.')[0]; // 위에서 정수부 끝에 붙여준 마침표(.)를 그대로 제거함.
+                }
+            }
+        }
+
+        $(".password-keyboard-keypad a.key").click(function () {
+            $('.pay-amount').append($(this).text());
+            $('.pay-amount').text(removeComma($('.pay-amount').text()));
+            $('.pay-amount').text(AddComma($('.pay-amount').text()));
+        });
+    </script>
+    <script type="text/javascript">
+        <!--
+        //[] <--문자 범위 [^] <--부정 [0-9] <-- 숫자  
+        //[0-9] => \d , [^0-9] => \D
+        var rgx1 = /\D/g; // /[^0-9]/g 와 같은 표현
+        var rgx2 = /(\d+)(\d{3})/;
+
+        function getNumber(obj) {
+
+            var num01;
+            var num02;
+            num01 = obj.value;
+            num02 = num01.replace(rgx1, "");
+            num01 = setComma(num02);
+            obj.value = num01;
+
+        }
+
+        function setComma(inNum) {
+
+            var outNum;
+            outNum = inNum;
+            while (rgx2.test(outNum)) {
+                outNum = outNum.replace(rgx2, '$1' + ',' + '$2');
+            }
+            return outNum;
+
+        }
+        //-->
+    </script>
+
+</body>
+
+</html>

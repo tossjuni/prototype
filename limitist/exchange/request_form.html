@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss : KB 환전</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+</head>
+
+<body id="kb-exchange" class="elephant100">
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="currency"><i class="fa fa-calendar" aria-hidden="true"></i> 외화 수령일</label>
+                <select class="form-control input-lg select">
+                    <option value="0">선택</option>
+                    <option value="1">2017. 4. 20. (목)</option>
+                    <option value="1">2017. 4. 21. (금)</option>
+                    <option value="1">2017. 4. 24. (월)</option>
+                    <option value="1">2017. 4. 25. (화)</option>
+                    <option value="1">2017. 4. 26. (수)</option>
+                    <option value="1">2017. 4. 27. (목)</option>
+                    <option value="1">2017. 4. 28. (금)</option>
+                    <option value="1">2017. 5. 1. (월)</option>
+                    <option value="1">2017. 5. 2. (화)</option>
+                    <option value="1">2017. 5. 4. (목)</option>
+                    <option value="1">2017. 5. 8. (월)</option>
+                    <option value="1">2017. 5. 10. (수)</option>
+                    <option value="1">2017. 5. 11. (목)</option>
+                    <option value="1">2017. 5. 12. (금)</option>
+                </select>
+                <!--                <input type="date" class="form-control input-lg" id="input-receipt-date">-->
+            </div>
+            <div class="form-group">
+                <label for="currency"><i class="fa fa-map-marker" aria-hidden="true"></i> 수령지점</label>
+                <input type="text" class="form-control input-lg" id="input-receipt-branch" placeholder="지점 선택">
+            </div>
+            <div class="form-group">
+                <label for="currency">수령인 이름/생년월일</label>
+                <input type="text" class="form-control input-lg" id="input-recipient-name" value="강토스">
+                <input type="tel" class="form-control input-lg" id="input-recipient-birthday" value="19800614">
+            </div>
+            <div class="form-group">
+                <label for="currency">휴대폰번호</label>
+                <input type="tel" class="form-control input-lg" id="input-recipient-birthday" value="01043219876">
+            </div>
+            <label class="checkbox">
+                <input type="checkbox" name="name" value=""> 필수 개인정보 수집, 이용에 동의합니다. (비여신 금융거래) <a class="ABlue500-text" data-toggle="modal" data-target="#modal-agreement"><u>전문 읽기</u></a>
+            </label>
+            <ul style="margin:28px 0; font-size:14px; line-height:1.6; list-style-type:circle;">
+                <li>수령 시 신분증을 꼭 가져오세요. 신분증과 위 수령인 정보가 일치하는지 확인합니다.</li>
+                <li>지정하신 수령희망일에 수령희망점에서만 수령하실 수 있습니다.</li>
+                <li>환전 금액 결제 후 취소는 불가합니다. (KB영업점에서 되팔기하셔야 합니다)</li>
+                <li>외국인은 거래가 불가합니다.</li>
+                <li>해외여행경비 사유로만 환전하실 수 있습니다.</li>
+            </ul>
+            <button type="submit" class="btn btn-lg btn-block btn-accent">결제하기</button>
+        </form>
+    </div>
+
+    <!-- 개인정보 수집, 이용동의 -->
+    <div id="modal-agreement" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>필수 개인정보 수집, 이용 동의 (비여신 금융거래)</h4>
+                    <p>**약관 내용**</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-accent" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/tossframe.js"></script>
+</body>
+
+</html>

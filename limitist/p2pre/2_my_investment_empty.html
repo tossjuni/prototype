@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!--    <link rel="import" href="WebpayHead.html">-->
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>테라펀딩 P2P 투자</title>
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-2.0.2.css" rel="stylesheet">
+    <!-- Service CSS -->
+    <link href="assets/css/p2pRealEstate.css" rel="stylesheet">
+    <link href="assets/css/list-field.css" rel="stylesheet">
+    <link href="assets/css/list.css" rel="stylesheet">
+    <link href="assets/css/modal.css" rel="stylesheet">
+    <link href="assets/css/terms.css" rel="stylesheet">
+    <link href="assets/css/toss-tabs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="elephant100 wrapper">
+        <!--네비게이션-->
+        <ul class="nav toss-tabs fixed-top">
+            <li class="nav-item">
+                <a class="nav-link" href="1_invest.html">투자상품</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="2_my_investment.html">나의 투자 현황</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="3_setting.html">투자 설정</a>
+            </li>
+        </ul>
+
+        <div class="card mt-2">
+            <div class="card-block">
+                <h6 class="card-subtitle mt-2 mb-2 elephant600-text">예치금 잔액</h6>
+                <h3 class="card-title">0<span class="won">원</span></h3>
+                <div class="row mt-4">
+                    <div class="col-6 pr-1">
+                        <a href="2_my_investment_deposit_add.html" id="deposit-add" class="btn btn-outline-accent btn-block">+ 채우기</a>
+                    </div>
+                    <div class="col-6 pl-1">
+                        <button onclick="location.href=' 2_my_investment_deposit_history.html';" class="btn btn-outline-accent btn-block">입출금 내역 보기</button>
+                    </div>
+                </div>
+                <p class="card-text orange500-text mt-3">
+                    <span class="oi oi-warning"></span> 투자를 진행하시려면 먼저 예치금을 채워주세요!
+                </p>
+            </div>
+        </div>
+        <div class="card mt-2">
+            <div class="card-block">
+                <h6 class="card-subtitle mt-2 mb-2 text-muted">총 투자금액</h6>
+                <h3 class="card-title">0<span class="won">원</span></h3>
+                <ul class="list-field mt-4">
+                    <li>
+                        <span class="key ">모집 중</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">모집 완료</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">상환 중</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">상환 지연 중</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">연체 중</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">부실 중</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">상환 완료</span>
+                        <span class="value "><strong>0 원</strong></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mt-4 pt-4 mb-4 pb-4">
+            <p class="text-center m-0" style="font-size:48px;">
+                <span class="oi oi-warning elephant400-text"></span>
+            </p>
+            <p class="text-center elephant600-text">아직 투자하신 내역이 없습니다.</p>
+        </div>
+    </div>
+    <footer class="elephant500 elephant100-text">
+        <div class="container">
+            <p>
+                (주)테라크라우드대부<br> 대부업 2015-서울강남-0232<br> 대부중개업 2016-서울강남-0268<br> 대표자 : 이돈필<br> 등록시도명칭 : 서울시 강남구청(02-3423-5522)<br> 주소 : 서울시 강남구 테헤란로27길 16 BMY타워 11F<br> 대표전화 : 02-582-2558
+            </p>
+            <p>대출금리 연 19% 이내 (연체금리 연 25%이내)</p>
+            <p>플랫폼 이용료, 법무비 등 부대비용 별도 부담입니다.<br> 중개수수료를 요구하거나 받는 행위는 불법입니다.<br> 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.<br> (주)테라핀테크는 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+</body>
+
+</html>

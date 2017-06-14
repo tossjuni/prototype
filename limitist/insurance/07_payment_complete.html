@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!--    <link rel="import" href="WebpayHead.html">-->
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss로 결제</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Toss">
+    <meta name="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss">
+    <meta itemprop="description" content="Toss">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss">
+    <meta name="og:description" content="Toss">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image.png">
+    <meta name="og:url" content="https://toss.im/">
+    <meta name="og:site_name" content="Toss">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-2.0.1.css" rel="stylesheet">
+    <!-- Service CSS -->
+    <link href="https://toss.im/frame/services/insurance/insurance-1.0.0.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W587HKK');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W587HKK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-insurance">
+        <div class="wrapper">
+            <div class="content">
+                <div class="info">
+                    <h1 class="text-center"><span class="oi oi-check ABlue500-text"></span></h1>
+                    <h2 class="text-center">해외여행보험 가입이 완료되었습니다.</h2>
+                    <p class="text-center">고객님의 가입내역을 이메일로 발송해드리겠습니다.</p>
+                </div>
+                <section class="result">
+                    <ul class="list list-record">
+                        <li>
+                            <ul>
+                                <li>
+                                    <span class="key">가입번호</span>
+                                    <span class="value"><strong>00-0000-0000</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key">피보험자</span>
+                                    <span class="value"><strong>강토스 [890712-1******]</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key">계약자</span>
+                                    <span class="value"><strong>인바이유</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key">보험기간</span>
+                                    <span class="value"><strong>4일</strong><br>2017/01/01 00:00<br>~ 2017/01/04 23:59</span>
+                                </li>
+                                <li>
+                                    <span class="key">총 가입자 수</span>
+                                    <span class="value"><strong>2명</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key">총 보험료</span>
+                                    <span class="value"><strong>6,800원</strong></span>
+                                    <span class="value"></span>
+                                    <span class="value"></span>
+                                </li>
+                                <li>
+                                    <span class="key">영수일시</span>
+                                    <span class="value"><strong>2017/01/31</strong></span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <a href="history.html" class="btn btn-accent btn-lg btn-block">가입내역 확인</a>
+            </div>
+            <footer>
+                <p class="poweredBy">
+                    powered by INBYU
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {});
+        $("#btn-payment").click(function() {
+            alert("여기서 Toss 결제창이 뜹니다.");
+        });
+    </script>
+
+</body>
+
+</html>

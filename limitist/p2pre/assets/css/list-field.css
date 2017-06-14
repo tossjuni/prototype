@@ -1,0 +1,28 @@
+.list-field {
+    padding: 0;
+    list-style: none;
+}
+
+.list-field>li {
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #d6dbe7;
+    color: #3d424e;
+    overflow: hidden;
+}
+
+.list-field>li .key,
+.list-field>li .value {
+    display: block;
+    max-width: 50%;
+    word-break: keep-all;
+}
+
+.list-field>li .key {
+    float: left;
+}
+
+.list-field>li .value {
+    float: right;
+    text-align: right;
+}

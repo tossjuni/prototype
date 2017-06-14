@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!--    <link rel="import" href="WebpayHead.html">-->
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>테라펀딩 P2P 투자 - 투자상세</title>
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-2.0.2.css" rel="stylesheet">
+    <!-- Service CSS -->
+    <link href="assets/css/p2pRealEstate.css" rel="stylesheet">
+    <link href="assets/css/list-field.css" rel="stylesheet">
+    <link href="assets/css/list.css" rel="stylesheet">
+    <link href="assets/css/modal.css" rel="stylesheet">
+    <link href="assets/css/terms.css" rel="stylesheet">
+    <link href="assets/css/toss-tabs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mb-3">
+        <header class="fund-title mt-4 mb-2">
+            <span class="badge ABlue500">모집 중</span>
+            <h4 class="mt-1">제245차 송악신도시 오피스텔 신축 4차</h4>
+            <p class="fund-duration">모집기간 : 2017.03.14 ~ 2017.03.21</p>
+        </header>
+    </div>
+    <div class="container elephant100 py-3 mb-3">
+        <div class="card fund-information">
+            <img class="card-img-top" alt="" src="assets/images/sample_img_1.jpg">
+            <div class="card-block fund-details px-3">
+                <h6>펀딩 진행 현황</h6>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 25%; height: 20px; border-radius:none;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+                <p class="card-text mt-2">
+                    <span class="fundend-amount font-weight-bold blue500-text">25,000만원</span>
+                    <span class="funding-amount">/ 100,000만원</span>
+                    <span class="fundend-investors float-right">263명 참여</span>
+                </p>
+                <hr>
+                <!-- alert - 투자한도 초과의 경우-->
+                <div class="alert alert-danger py-3 text-center" role="alert">
+                    <div class="mb-2">투자 가능 한도를 모두 소진하였습니다.</div>
+                    <p>투자상품 1건당 최대 500만원 / 총 1,000만원까지만 투자하실 수 있습니다.</p>
+                    <a href="signup_terafunding.html" class="btn btn-block btn-danger">나의 투자현황 보기</a>
+                </div>
+
+                <!-- alert - 비회원인 경우-->
+                <!--
+                <div class="alert alert-warning py-3 text-center" role="alert">
+                    <div class="mb-2">투자에 참여하려면 투자 서비스를 위한 약관동의와 추가정보 입력이 필요합니다.</div>
+                    <a href="signup_terafunding.html" class="btn btn-block btn-warning">투자 시작하기</a>
+                </div>
+-->
+                <!-- alert - 예치금이 10만원 미만일 경우-->
+                <!--
+                <div class="alert alert-danger py-3 text-center" role="alert">
+                    <div class="mb-2">투자를 진행하려면 먼저<br><strong>예치금</strong>을 채워주세요.</div>
+                    <a href="2_my_investment_empty.html" class="btn btn-block btn-danger">예치금 채우러 가기</a>
+                </div>
+-->
+            </div>
+        </div>
+        <div class="card mt-2">
+            <div class="card-block">
+                <ul class="list-field">
+                    <li>
+                        <span class="key ">예상 수익률 </span>
+                        <span class="value ABlue500-text"><strong>연 12.56%</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">예상 투자기간</span>
+                        <span class="value ABlue500-text"><strong>11개월</strong></span>
+                    </li>
+                    <li>
+                        <span class="key ">테라펀딩 평가등급</span>
+                        <span class="value ABlue500-text"><strong>B2</strong></span>
+                    </li>
+                    <li>
+                        <span class="key">LTV <span id="info-ltv" class="badge badge-pill badge-primary">?</span></span>
+                        <span class="value ABlue500-text"><strong>65%</strong></span>
+                    </li>
+                </ul>
+                <p id="info-ltv-content">준공 후 예상가치 대비 대출비율로, 비율이 낮을 수록 안정성이 높은 상품입니다. (Loan To Value ratio)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fund-detail-information">
+        <ul class="nav nav-tabs nav-justified sticky-top" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#Summary" role="tab">투자상품 요약</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Detail" role="tab">투자상품 상세</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Calculator" role="tab">수익 계산</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="Summary">
+                <div class="fund-contents fund-summary">
+                    <div class="title">투자요약</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="subtitle">투자상품</div>
+                            <div class="description">건축자금채권</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">모집금액</div>
+                            <div class="description">1차 6억원(모집완료) + 2차 2억원(모집완료) + 3차 4억원(모집완료) + 4차 5억원(모집중) + 5차 이후 1.5억원(예정) = 총 18.5억원</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">연수익률</div>
+                            <div class="description">12.35%</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">투자기간</div>
+                            <div class="description">총 9개월 (잔여공사기간 6개월 + 1개월 단위로 최장3개월까지 연장가능)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">상환예정</div>
+                            <div class="description">2017년 11월 22일 (중도 상환 가능)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">상환방식</div>
+                            <div class="description">매월 이자 지급 후 원금은 만기일시상환</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">상환재원</div>
+                            <div class="description">준공 후 분양(임대) 또는 담보대출</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">자금용도</div>
+                            <div class="description">토지대 2.67억원 + 공사비 12억원 + 기타사업비 3.83억원 = 총 18.5억원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fund-contents fund-point">
+                    <div class="title">핵심 투자 포인트</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="point">POINT 01</div>
+                            <div class="subtitle"> 양호한 주거 입지 </div>
+                            <div class="description">본 건은 당진시 송악도시개발구역 인근에 위치하고 있으며, 기지초등학교가 도보 10분 거리에 있어 통학이 가능합니다. 송산일반산업단지(현대제철)와 송악읍 사이에 직선도로가 곧 개통예정이어서 현대제철 근로자들의 인구증가가 예상됩니다. 최근 송악도시개발구역은 아파트 단지들로 활발히 개발되고 있으며, 당진종합병원 및 프리미엄아울렛 등의 입점 등 인근 일대의 주거환경도 개선되고 있는 상황입니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="point">POINT 02</div>
+                            <div class="subtitle"> 명확한 상환재원 </div>
+                            <div class="description">본 건 주변 유사 빌라 및 아파트의 실 거래 분석 결과, 준공 후 건물의 예상 감정가는 26.8~32.3억입니다. 준공 후 시중은행의 대환 대출 또는 분양(임대)을 통해 투자금을 상환 받을 수 있어 상환 재원이 명확합니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="point">POINT 03</div>
+                            <div class="subtitle"> 시공자의 오랜 시공 실적 </div>
+                            <div class="description">본 건 시공자 ㈜다숲종합건설(신용등급 BB0)은 2006년부터 시공업을 영위하고 있으며, 2015년말 기준 매출 200억원 수준입니다. 2016년 현재 총 11건 이상 수주하여 건설 중에 있어 사업 능력 양호하다고 판단됩니다.</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="fund-contents fund-guarantee">
+                    <div class="title">담보정보</div>
+                    <div class="description-box">
+                        <div>준공 후 예상가치 31.2억원</div>
+                        <div class="guage-header">
+                            <div style="width: 59%;">
+                                <div>테라펀딩 대출금 (LTV59%)</div>
+                            </div>
+                            <div style="width: 41%;">잔여 여유금</div>
+                        </div>
+                        <div class="guage-padding">
+                            <div style="width: 59%;"></div>
+                            <div style="width: 41%;"></div>
+                        </div>
+                        <div style="overflow: hidden;">
+                            <div class="guage" style="width: 59%;">
+                                <div style="width: 64.9%; background-color:#2677cc;" title="12억원"></div>
+                                <div style="width: 27%; background-color:#57aafe;" title="5억원"></div>
+                                <div style="width: 8.1%; background-color:#edf6ff;" title="1.5억원"></div>
+                            </div>
+                            <div style="width: 41%" title="12.7억원"></div>
+                        </div>
+                        <ul class="guage-list">
+                            <li class="finish"><span>모집완료</span><span> 12억원</span></li>
+                            <li class="target"><span>모집중</span><span> 5억원</span></li>
+                            <li class="remain"><span>모집예정</span><span> 1.5억원</span></li>
+                            <li class="reserve"><span>잔여여유금</span><span> 12.7억원</span></li>
+                        </ul>
+                        <small class="form-text text-muted">
+                            * 대출자의 요청에 의해 모집금액이 변경될 수 있으며, 이로 인해 펀딩이 조기 마감될 수 있습니다.
+                        </small>
+                    </div>
+                </div>
+                <div class="fund-contents fund-grade">
+                    <div class="title">테라펀딩 평가등급</div>
+                    <div class="description-box">
+                        <div class="grade my-3">
+                            <div class="round">B2</div>
+                            <div>
+                                <div class="grade-unit">
+                                    <div>A<span class="hidden-xs">1</span></div>
+                                    <div>A2</div>
+                                    <div>A3</div>
+                                    <div>B<span class="hidden-xs">1</span></div>
+                                    <div>B2</div>
+                                    <div>B3</div>
+                                    <div>C<span class="hidden-xs">1</span></div>
+                                    <div>C2</div>
+                                    <div>C3</div>
+                                    <div>D<span class="hidden-xs">1</span></div>
+                                    <div>D2</div>
+                                    <div>D3</div>
+                                    <div>E<span class="hidden-xs">1</span></div>
+                                    <div>E2</div>
+                                    <div>E3</div>
+                                </div>
+                                <div class="grade-guage">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                </div>
+                                <div class="grade-tb">
+                                    <div class="float-left">상위</div>
+                                    <div class="float-right">하위</div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="tera-table-v4">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>안정성</p>
+                                        <p>담보인정비율(LTV), 자기자본(Equity) 등</p>
+                                    </td>
+                                    <td class="guage2">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li class="active"></li>
+                                            <li class="active"></li>
+                                            <li class="active"></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>수익성</p>
+                                        <p>투자수익률(ROI), 자기자본이익률(ROE) 등</p>
+                                    </td>
+                                    <td class="guage2">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li class="active"></li>
+                                            <li class="active"></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>시장성</p>
+                                        <p>지역여건, 입지여건, 시장환경분석 등</p>
+                                    </td>
+                                    <td class="guage2">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li class="active"></li>
+                                            <li class="active"></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="fund-contents fund-borrower">
+                    <div class="title">대출자 신용등급</div>
+                    <div class="description-box">
+                        <div class="grade my-4">
+                            <div class="round">4등급</div>
+                            <div>
+                                <div class="grade-unit">
+                                    <div>1</div>
+                                    <div>2</div>
+                                    <div>3</div>
+                                    <div>4</div>
+                                    <div>5</div>
+                                    <div>6</div>
+                                    <div>7</div>
+                                    <div>8</div>
+                                    <div>9</div>
+                                    <div>10</div>
+                                </div>
+                                <div class="grade-guage">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                    <div class="active"></div>
+                                </div>
+                                <div class="grade-tb">
+                                    <div class="float-left">상위</div>
+                                    <div class="float-right">하위</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-block px-3 py-1">
+                            <ul class="list-field">
+                                <li>
+                                    <span class="key ">채무불이행</span>
+                                    <span class="value"><strong>0원</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key ">신용채무</span>
+                                    <span class="value"><strong>0원</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key ">담보신용</span>
+                                    <span class="value"><strong>0원</strong></span>
+                                </li>
+                                <li>
+                                    <span class="key">보증신용</span>
+                                    <span class="value"><strong>0원</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <small class="form-text text-muted">※ 제공 : 나이스신용정보 / KCB</small>
+                    </div>
+                </div>
+                <div class="fund-contents fund-right">
+                    <div class="title">부동산 권리분석</div>
+                    <div class="description-box">
+                        <div>
+                            <div class="text-center my-3">
+                                <img src="https://www.terafunding.com/assets/img/invest/pt_ldp.jpg" alt="">
+                                <div class="elephant700-text mt-1">변호사 이돈필</div>
+                            </div>
+                            <p>테라펀딩 이돈필 변호사입니다. 토지등기부등본 상 (제180차 송악신도시 오피스텔 신축 펀딩 종료 후) 2016년 12월 23일에 신탁을 원인으로 소유권 이전등기가 완료되었습니다. 그 외 별도의 부동산 소유관계에 대한 권리가 없음을 확인합니다.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="fund-contents fund-notice">
+                    <div class="title">투자시 유의사항</div>
+                    <div class="description-box">
+                        <ul class="pl-3">
+                            <li>온라인을 통한 금융투자상품의 투자는 회사의 권유 없이 고객님의 판단에 의해 이루어집니다.</li>
+                            <li>부동산 건축 자금의 특성상, 상환예정일 이전에 중도 상환될 수 있습니다.</li>
+                            <li class="red600-text">만기 시 채무자의 상황에 따라 연체가 발생할 수 있고 채권추심 등을 통해 투자금 회수에 상당기간 소요될 수 있습니다.</li>
+                            <li class="red600-text">부동산이 담보로 제공되나 채무 불이행시 경,공매 등의 환가절차 과정에서 원금의 일부 손실이 발생할 수 있습니다.</li>
+                            <li class="red600-text">당사는 원금 및 수익률을 보장하지 않으므로 투자 시 신중한 결정 바랍니다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fund-contents fund-banner">
+                    <a href="/More/FAQ" class="btn btn-block btn-outline-accent">자주하는 질문 보기</a>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Detail" data-setting="Y">
+                <div class="fund-contents fund-site">
+                    <div class="title">사업부지 정보</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="subtitle">소재지</div>
+                            <div class="description">충청남도 당진시 송악읍 기지시리 255-7,255-8,266-3 (총 3필지)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">용도지역</div>
+                            <div class="description">제2종 일반주거지역</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">도로현황</div>
+                            <div class="description">도로(접함)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">대지면적</div>
+                            <div class="description">650㎡(196.6평)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div>**지도영역**</div>
+                            <div id="change_map_type" data-overlay="N">지적편집도 보기</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="fund-contents fund-building">
+                    <div class="title">건물정보</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="subtitle">주 용 도</div>
+                            <div class="description">공동주택 (다세대주택 및 오피스텔)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">총세대수</div>
+                            <div class="description">16세대</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">층 수</div>
+                            <div class="description">지하1F~10F, 1동 (ELEV有)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">전체연면적</div>
+                            <div class="description">1,694.50㎡(512.6평)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">전용면적</div>
+                            <div class="description">다세대주택 68.8㎡(20.8평) 6세대/ 오피스텔 84.9㎡(25.7평) 10세대</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="sub-image-wraper">
+                                <div class="images">
+                                    <img class="img-width-100" src="assets/images/sample_img_1.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fund-contents fund-business">
+                    <div class="title">사업정보</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="subtitle">준공 후 테라펀딩 예상가치</div>
+                            <div class="description">31.2억원 (경일감정평가 법인 26.9억원~32.3억원)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">현재공정율</div>
+                            <div class="description fund-construct">
+                                <div class="progress mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%; height: 20px; border-radius:none;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                </div>
+                                <div class="image-wraper sub-image-wraper">
+                                    <img class="img-width-100" src="assets/images/sample_img_1.jpg">
+                                </div>
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item">01.공사준비단계</li>
+                                    <li class="list-group-item active">02.공사골조단계</li>
+                                    <li class="list-group-item">03.공사마감단계</li>
+                                    <li class="list-group-item">04.공사준공단계</li>
+                                </ul>
+                                <p>본 건은 4개동이 진행되는 사업지로서, A,B,C동은 5층 바닥 콘크리트 타설을 완료하고 5층 벽체 철근을 배근하는 중입니다. D동은 작업부지 확보를 위하여 A,B,C동 골조가 완료 되는 6월 초순경에 진행 될 예정입니다.</p>
+                                <p>
+                                    - 테라펀딩 건축사 신동관
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fund-contents fund-safety">
+                    <div class="title">투자보호</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="subtitle">담보 설정방법</div>
+                            <div class="description">신탁 1순위 수익권 (토지 및 건물)</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">담보 설정내용</div>
+                            <div class="description">사업자의 다른 채무로 인해 사업부지가 압류되어 부실되지 않도록 토지의 소유권을 안전하게 부동산 신탁회사로 이전하고 반드시 1순위 수익권을 확보합니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">투자금관리</div>
+                            <div class="description">투자금은 대출 실행과 동시에 부동산 신탁회사 에스크로우 계좌로 안전하게 이체되어 투명하게 운용됩니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">사업관리</div>
+                            <div class="description">대출금(투자금)은 대출자에게 한번에 일괄 지급되지 않습니다. 대출자(사업자)는 공정률에 따라 매월 공사비를 요청하며, 테라펀딩 사업관리팀 건축사가 매월 공사현장을 방문하여 정상적으로 공사가 진행되었는지 확인 후 신탁사를 통해 공사업자에게 대금을 지급합니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">추가채권보전</div>
+                            <div class="description">· 시행권 포기각서 · 시공사 공사비 완납증명서 · 시공권 포기각서 · 화재보험 · 시공사 유치권 포기각서 · 시행자/시공자 대표 연대보증</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Calculator">
+                <div class="fund-contents fund-calculator">
+                    <div class="title">투자예정금액을 입력하세요.</div>
+                    <div class="description-box mb-2">
+                        <form id="form_calculator">
+                            <div class="input-wrapper">
+                                <div class="input-group mb-1">
+                                    <input type="number" class="form-control" placeholder="금액입력">
+                                    <span class="input-group-addon" id="basic-addon2">만원</span>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-accent btn-block">계산하기</button>
+                                </div>
+                            </div>
+                            <small class="form-text text-muted">
+                                ※ 최소금액 10만원부터 10만원 단위로 투자하실 수 있습니다.
+                            </small>
+                        </form>
+                    </div>
+                </div>
+                <div class="fund-contents fund-table">
+                    <div class="title">상환 예정표 (만기상환 시)</div>
+                    <div class="description-box">
+                        <dlv class="card">
+                            <div class="card-block">
+                                <ul class="list-field">
+                                    <li>
+                                        <span class="key">만기상환일</span>
+                                        <span class="value"><strong>2017.11.22</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">투자원금</span>
+                                        <span class="value"><strong>0원</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">플랫폼이용료</span>
+                                        <span class="value"><strong>0원</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">수익금(세전)</span>
+                                        <span class="value"><strong>0원</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">세금(이자소득세+주민세)</span>
+                                        <span class="value"><strong>0원</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key ABlue500-text">수익금(세후)</span>
+                                        <span class="value ABlue500-text"><strong>0원</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dlv>
+                        <small class="form-text text-muted">※ 중도상환 등 기타 사유 발생 시 실제 수익금 및 플랫폼 이용료는 변동될 수 있습니다.</small>
+                    </div>
+                </div>
+                <div class="fund-contents fund-table">
+                    <div class="title">월별 수익금 지급 예정표 (만기상환 시)</div>
+                    <div class="description-box">
+                        <dlv class="card">
+                            <div class="card-block">
+                                <ul class="list-field">
+                                    <li>
+                                        <span class="key">1회차</span>
+                                        <span class="value"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">2회차</span>
+                                        <span class="value"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">3회차</span>
+                                        <span class="value"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">4회차</span>
+                                        <span class="value"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">5회차</span>
+                                        <span class="value"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key">6회차</span>
+                                        <span class="value"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                    <li>
+                                        <span class="key ABlue500-text">총합계</span>
+                                        <span class="value ABlue500-text"><strong>0원 (세후)</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dlv>
+                    </div>
+                </div>
+                <div class="fund-contents fund-safety">
+                    <div class="title">테라펀딩 투자 수익금 및 원금 지급 가이드</div>
+                    <div class="description-box">
+                        <div class="sub-wraper">
+                            <div class="subtitle">수익금 지급</div>
+
+                            <div class="description">수익금은 투자신청일부터 월 단위로 일할 계산되며, 매월 첫 영업일에 세금 원천징수 후 지급됩니다. ※ 첫 수익금은 투자신청일 기준 익월 첫 영업일에 지급됩니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">원금상환</div>
+                            <div class="description">원금만기일시상환 상품으로 대출자가 대출금 상환 즉시 투자자에게 원금이 상환됩니다. ※ 건축자금 특성 상 준공 일정에 따라 조기상환 될 수 있습니다.</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">세금</div>
+                            <div class="description">이자 소득에 대한 세금 원천징수 후 차감된 금액(세후)이 테라펀딩 가상계좌로 입금됩니다. ※ 이자소득세율 : 이자소득세 25% + 주민세 2.5% = 27.5%</div>
+                        </div>
+                        <div class="sub-wraper">
+                            <div class="subtitle">플랫폼 이용료</div>
+                            <div class="description">플랫폼 이용료는 투자기간에 따라 일할 계산되며, 원금상환시 차감됩니다. (ex) 투자기간 6개월인 상품의 경우 0.6% / 8개월인 상품의 경우 0.8% ※ 플랫폼 이용료 : 투자금 X 1.2% / 365일 X 이용일수</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--푸터-->
+    <footer class="elephant500 elephant100-text pt-4">
+        <div class="container">
+            <div class="gray50-text">
+                테라펀딩 고객센터 <span class="ml-1 font-weight-bold">02-582-2558</span>
+            </div>
+            <hr>
+            <p>
+                (주)테라크라우드대부
+                <br> 대부업 2015-서울강남-0232
+                <br> 대부중개업 2016-서울강남-0268
+                <br> 대표자 : 이돈필
+                <br> 등록시도명칭 : 서울시 강남구청(02-3423-5522)
+                <br> 주소 : 서울시 강남구 테헤란로27길 16 BMY타워 11F
+                <br> 대표전화 : 02-582-2558
+            </p>
+            <p>대출금리 연 19% 이내 (연체금리 연 25%이내)</p>
+            <p>플랫폼 이용료, 법무비 등 부대비용 별도 부담입니다.
+                <br> 중개수수료를 요구하거나 받는 행위는 불법입니다.
+                <br> 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.
+                <br> (주)테라핀테크는 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toss JS Framework CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/frame/assets/javascripts/tossframe-2.0.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#info-ltv-content").hide();
+        });
+        $("#info-ltv").click(function () {
+            $("#info-ltv-content").toggle();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+#toss-insurance {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    word-break: keep-all;
+}
+
+#toss-insurance .rotate-180 {
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Safari */
+    transform: rotate(180deg);
+    /* Standard syntax */
+}
+
+#toss-insurance input,
+#toss-insurance select {
+    line-height: 36px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#toss-insurance select {
+    -webkit-appearance: none;
+}
+
+#toss-insurance input[type=date] {
+    flex-direction: row;
+}
+
+.content {
+    padding: 0px 16px;
+}
+
+.content .info {
+    margin-top: 36px;
+}
+
+.content .info h2 {
+    margin-bottom: 0.1em;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.content .info h3 {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.content .info h4 {
+    margin-top: -16px;
+    font-size: 0.85rem;
+}
+
+.content .info h5 {
+    font-size: 0.8rem;
+}
+
+.content .info p {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #5c6476;
+}
+
+.content .info .btn {
+    margin: 0;
+}
+
+.content .btn {
+    font-size: 1em;
+    margin-bottom: 16px;
+}
+
+.content .btn-block+.btn-block {
+    margin-top: -12px;
+}
+
+.content .btn .oi {
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+
+.content .btn-group {
+    width: 100%;
+}
+
+.content .btn-group .btn {
+    margin-bottom: 0;
+    width: 50%;
+}
+
+.content .btn-group .active {
+    background-color: #dbe4fe;
+    border: 1px solid #4e7bfa;
+    color: #4e7bfa;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.content .form-group input+input,
+.content .form-group .input-group+.input-group {
+    margin-top: 4px;
+}
+
+.content .form-group .input-group-addon {
+    background-color: #fff;
+}
+
+.content .form-group+.form-group {
+    margin-top: 1rem;
+}
+
+.content .form-group label {
+    font-size: 0.85rem;
+}
+
+.content .form-group span.oi {
+    color: #5c6476;
+}
+
+.content .wrapper-input {
+    margin: 0 -16px 16px;
+    padding: 16px 16px;
+    background-color: #eaedf3;
+    border-top: 1px solid #d6dbe7;
+    border-bottom: 1px solid #d6dbe7;
+}
+
+.content .wrapper-input+.wrapper-input {
+    margin-top: -16px;
+}
+
+.content .description {
+    font-size: 0.8rem;
+    color: #5c6476;
+}
+
+.content .person-info .person {
+    margin: 0 0 8px;
+    background-color: #fff;
+    border: 1px solid #d6dbe7;
+    border-radius: 4px;
+    padding: 16px 16px 12px;
+}
+
+.content .person-info .person .btn-remove {
+    float: right;
+    margin-top: -0.8em;
+    margin-right: -1em;
+}
+
+.content .person-info .person .btn-remove button {
+    cursor: pointer;
+}
+
+.content .person-info .person .btn-remove button .oi {
+    margin: 0;
+}
+
+.content .person-info .person .resident-number {
+    display: table;
+}
+
+.content .person-info .person .resident-number input,
+.content .person-info .person .resident-number span {
+    display: table-cell;
+}
+
+.content .person-info .person .resident-number span {
+    text-align: center;
+    vertical-align: middle;
+    width: 16px;
+}
+
+.content .person-info .wrapper-input+.wrapper-input {
+    margin-top: -8px;
+}
+
+.content .wrapper-input .person .person-number {
+    background-color: #c2cadc;
+    color: #3d424e;
+}
+
+.content .wrapper-input .person .person-data {
+    background-color: #fff;
+}
+
+.content .result {
+    background-color: #eaedf3;
+    margin: 32px -16px 16px;
+    padding: 16px 0 8px;
+}
+
+.content .result h4 {
+    margin: 0 16px 16px;
+    font-size: 1.3rem;
+}
+
+.content .details {
+    font-size: 0.85rem;
+    color: #5c6476;
+}
+
+.content .details ul {
+    padding-left: 1rem;
+}
+
+.content .details li+li {
+    margin-top: 0.3rem;
+}
+
+.content .list-record {
+    width: 100%;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.content .list-record>li {
+    display: block;
+    margin: 4px 0;
+    padding: 24px 16px 20px;
+    background: #FFFFFF;
+    border: 1px solid #E8E9ED;
+}
+
+.content .list-record>li h5 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 16px;
+    color: #000000;
+}
+
+.content .list-record>li ul {
+    margin: 0;
+    padding: 0;
+}
+
+.content .list-record>li ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #DCDDE0;
+    color: #414142;
+    list-style: none;
+    overflow: hidden;
+}
+
+.content .list-record>li ul li:last-child {
+    border-bottom: none;
+}
+
+.content .list-record>li ul li .key {
+    float: left;
+}
+
+.content .list-record>li ul li .value {
+    float: right;
+    text-align: right;
+}
+
+.terms-agreement {
+    margin: 0 -16px 16px;
+    padding: 0;
+    border-top: 1px solid #d6dbe7;
+    list-style: none;
+}
+
+.terms-agreement li {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 9px 8px 0px 16px;
+    border-bottom: 1px solid #d6dbe7;
+    clear: both;
+}
+
+.terms-agreement li.term-row label {
+    font-size: 0.85rem;
+    line-height: 1.6rem;
+}
+
+.terms-agreement li.term-row .term-btn {
+    margin: 0;
+    padding: 0.4rem;
+    float: right;
+    font-size: 0.85rem;
+    color: #7b859d;
+}
+
+.terms-agreement li.term-row .description p {
+    margin: 0.6rem 0 0.6rem 0.4rem;
+    font-size: 0.8rem;
+    color: black;
+}
+
+.terms-agreement li.term-row .description h1 {
+    margin-top: 1.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.terms-agreement li.term-row .description h2 {
+    margin-top: 1.6rem;
+    font-size: 0.9rem;
+}
+
+.terms-agreement li.term-row .description h3 {
+    margin-top: 1.4rem;
+    font-size: 0.85rem;
+}
+
+.terms-agreement li.term-row .description h1:first-child {
+    margin-top: 1rem;
+}
+
+.terms-agreement li.term-row .additional-info {
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    color: #5c6476;
+}
+
+.terms-agreement li.term-category {
+    background-color: #f5f5f5;
+    color: #5c6476;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 4px 16px;
+}
+
+.terms-agreement li.term-all-agree {
+    background-color: #eaedf3;
+}
+
+.terms-agreement li.term-all-agree label {
+    font-weight: bold;
+}
+
+.terms-agreement li.term-all-agree label.checkbox input[type="checkbox"]::before {
+    background-color: #fff;
+}
+
+footer {
+    border: none;
+    background: transparent;
+    padding-bottom: 36px;
+}
+
+footer p.description {
+    margin-bottom: 0.6rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #5c6476;
+}
+
+footer p.poweredBy {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #5c6476;
+}
+
+@media screen and (min-width: 480px) {
+    #toss-insurance {
+        padding-top: 20px;
+        background-color: #eaedf3;
+    }
+    .wrapper {
+        width: 360px;
+        margin: 0px auto;
+        border-radius: 4px;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 8px #9ba7c6;
+    }
+}

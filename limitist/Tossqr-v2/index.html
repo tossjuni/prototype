@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss QR 만들기</title>
+    <!-- Search Engine -->
+    <meta name="description" content="송금을 간편하게 해주는 Toss QR 코드를 만들어보세요.">
+    <meta name="image" content="https://toss.im/assets/img/og_image_qrcode.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss QR 만들기">
+    <meta itemprop="description" content="송금을 간편하게 해주는 Toss QR 코드를 만들어보세요.">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image_qrcode.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss QR 만들기">
+    <meta name="og:description" content="송금을 간편하게 해주는 Toss QR 코드를 만들어보세요.">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image_qrcode.png">
+    <meta name="og:url" content="https://toss.im/pages/qr/create">
+    <meta name="og:site_name" content="Toss QR 만들기">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:video" content="https://toss.wistia.com/medias/swy3qvd159?wtime=0s">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS 문서의 맨 처음에 와야 합니다;-->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-1.1.8.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/tossqrgen.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MZS4GB9');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZS4GB9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-qr-gen">
+        <!--
+            <div class="logo">
+    <i class="i-logotype"></i> <span>QR</span>
+</div>
+-->
+        <div class="container">
+            <div class="introduction">
+                <h1>
+                    매장을 운영하시나요?<br>
+                    Toss 앱으로 결제를 받으세요!
+                </h1>
+                <p class="lead">
+                    기기 설치 - 없습니다.
+                    <br> 가입비 - 없습니다.
+                    <br> 결제 수수료, 정산 주기 - 없습니다.
+                </p>
+                <h3>무엇이 좋은가요?</h3>
+                <p>
+                    당신의 매장에 방문한 손님이 토스 앱만으로 결제할 수 있습니다. 현금도, 카드도 필요 없죠.
+                    <br> 점주 여러분은 결제 수수료 없이, 정산을 기다릴 필요 없이 바로 결제 금액을 입금 받으실 수 있습니다.
+                </p>
+                <h3>토스 앱? 많이 쓰나요?</h3>
+                <p>누적 앱 다운로드 600만을 넘었고, 누적 송금액은 3조원을 넘었습니다. 당신의 매장에 오는 분들 중 상당수가 쓰고 있을걸요?</p>
+                <h3>어떻게 하면 되죠?</h3>
+                <ol>
+                    <li>아래 입력란에 정산받을 계좌번호를 입력하고 무료로 QR코드를 발급받으세요.</li>
+                    <li>그냥 출력해서 매장 어딘가 붙여두세요.</li>
+                    <li>손님이 토스앱으로 코드를 스캔하고 돈을 보내면-</li>
+                    <li>결제 금액이 정산 계좌로 즉시 입금됩니다.</li>
+                </ol>
+                <script src="https://fast.wistia.com/embed/medias/swy3qvd159.jsonp" async></script>
+                <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><span class="wistia_embed wistia_async_swy3qvd159 popover=true popoverContent=link" style="display:inline"><a href="#" class="btn btn-sm btn-success-b btn-block" style="background-color: transparent; color: black; border-color: black;"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> 소개 영상 보기</a>
+                </span>
+            </div>
+        </div>
+        <div class="container-form elephant100">
+            <label>정산받을 계좌</label>
+            <select class="form-control input-lg select">
+                <option value="0">은행</option>
+                <option value="1">KB국민</option>
+                <option value="2">우리</option>
+                <option value="3">경남</option>
+            </select>
+            <input type="tel" class="form-control input-lg" style="display: inline-block;" placeholder="계좌번호">
+            <button id="create-qrcode" class="btn btn-accent btn-lg btn-block">무료로 QR코드 발급받기</button>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss로 결제</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta name="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss로 결제">
+    <meta itemprop="description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss로 결제">
+    <meta name="og:description" content="Toss 계정으로 간편하게 결제하세요.">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image.png">
+    <meta name="og:url" content="https://toss.im/pay">
+    <meta name="og:site_name" content="Toss로 결제">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS -->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-1.1.8.css" type="text/css" rel="stylesheet">
+    <!-- Toss 웹결제 layout CSS -->
+    <link href="assets/css/tossWebPay.css" type="text/css" rel="stylesheet">
+    <!-- Toss 웹결제 UI component CSS -->
+    <link href="assets/css/NavBar.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/PasswordKeyboard.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5JGVQH5');
+
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JGVQH5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-web-pay">
+        <div class="wrapper">
+            <div class="nav-bar">
+                <a href="#" class="nav-bar-btn nav-bar-btn-left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <h1>결제 암호 설정</h1>
+            </div>
+            <div class="content">
+                <div class="info">
+                    <h4>
+                        확인을 위해 다시 한번 입력해주세요.
+                        <br>(암호가 일치하면 결제 계좌 출금이체에 동의하게 되며 50,000원이 결제됩니다)
+                    </h4>
+                </div>
+                <div class="password-keyboard">
+                    <div class="password-keyboard-input">
+                        <table>
+                            <tr>
+                                <td class="password-char">
+                                    <div class="password-dot"></div>
+                                </td>
+                                <td class="password-margin"></td>
+                                <td class="password-char">
+                                    <div class="password-dot"></div>
+                                </td>
+                                <td class="password-margin"></td>
+                                <td class="password-char">
+                                    <div class="password-dot"></div>
+                                </td>
+                                <td class="password-margin"></td>
+                                <td class="password-char">
+                                    <div class="password-dot"></div>
+                                </td>
+                                <td class="password-margin"></td>
+                                <td><span class="glyphicon glyphicon-plus"></span></td>
+                                <td class="password-margin"></td>
+                                <td class="password-char"></td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-default btn-xs">입력값 보기</button>
+                    </div>
+                    <div class="password-keyboard-keypad">
+                        <table class="alphabet">
+                            <tr>
+                                <td><a href="#">A</a></td>
+                                <td><a href="#">B</a></td>
+                                <td><a href="#">C</a></td>
+                                <td><a href="#">D</a></td>
+                                <td><a href="#">E</a></td>
+                                <td><a href="#">F</a></td>
+                                <td><a href="#">G</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">H</a></td>
+                                <td><a href="#">I</a></td>
+                                <td><a href="#">J</a></td>
+                                <td><a href="#">K</a></td>
+                                <td><a href="#">L</a></td>
+                                <td><a href="#">M</a></td>
+                                <td><a href="#">N</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">O</a></td>
+                                <td><a href="#">P</a></td>
+                                <td><a href="#">Q</a></td>
+                                <td><a href="#">R</a></td>
+                                <td><a href="#">S</a></td>
+                                <td><a href="#">T</a></td>
+                                <td><a href="#">U</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">V</a></td>
+                                <td><a href="#">W</a></td>
+                                <td><a href="#">X</a></td>
+                                <td><a href="#">Y</a></td>
+                                <td><a href="#">Z</a></td>
+                                <td></td>
+                                <td><a href="#"><span class="glyphicon glyphicon-arrow-left"></span></a></td>
+                            </tr>
+                        </table>
+                        <button id="cta-keyboard" class="btn btn-accent btn-block">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+    <script>
+        $(document).ready(function() {});
+
+    </script>
+
+</body>
+
+</html>

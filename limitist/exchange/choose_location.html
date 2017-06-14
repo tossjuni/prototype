@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss : KB 환전</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+</head>
+
+<body id="kb-exchange" class="elephant100">
+    <div class="container">
+        <div class="form-group">
+            <label for="currency">외화를 수령하실 KB국민은행 지점을 선택하세요.</label>
+            <div class="btn-group select-location-type" role="group" aria-label="">
+                <button type="button" class="btn btn-accent-bordered active">지점명</button>
+                <button type="button" class="btn btn-accent-bordered">지역명</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" id="input-search-location" placeholder="검색할 지점명을 입력하세요.">
+            <button class="btn btn-block btn-lg btn-accent-bordered"><i class="fa fa-search" aria-hidden="true"></i> 검색</button>
+        </div>
+        <p style="margin:16px 0 24px; font-size:14px; line-height:1.6; list-style-type:circle;">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 선택하신 지점에 원하시는 권종(소액권 등)이 부족하여 원하시는 권종을 모두 수령하지 못할 수 있습니다. 가능 여부를 확인하시려면 해당 지점의 전화번호로 연락해주시기 바랍니다.
+        </p>
+        <div id="kb-bank-map">
+            지도 배치
+        </div>
+        <ul class="list-card">
+            <li>
+                <div class="card-header">
+                    <h5 class="title"><span class="badge blue500">1</span> 역삼서</h5>
+                    <span class="sub-title ABlue500-text">선택 <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                </div>
+                <ul class="list-table">
+                    <li>
+                        <strong>[도로명]</strong> 서울특별시 강남구 강남대로 318 (역삼동)
+                        <br>
+                        <strong>[지번]</strong> 서울 강남구 역삼동 837 타워빌딩 2층
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i> 02) 3452-1790
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="card-header">
+                    <h5 class="title"><span class="badge blue500">2</span> 역삼동</h5>
+                    <span class="sub-title ABlue500-text">선택 <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                </div>
+                <ul class="list-table">
+                    <li>
+                        <strong>[도로명]</strong> 서울특별시 강남구 강남대로 354, 혜천B/D (역삼동)
+                        <br>
+                        <strong>[지번]</strong> 서울특별시 강남구 역삼동 831 (혜천빌딩)
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i> 02) 553-9982
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

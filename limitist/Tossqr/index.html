@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toss QR 만들기</title>
+    <!-- Search Engine -->
+    <meta name="description" content="송금을 간편하게 해주는 Toss QR 코드를 만들어보세요.">
+    <meta name="image" content="https://toss.im/assets/img/og_image_qrcode.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toss QR 만들기">
+    <meta itemprop="description" content="송금을 간편하게 해주는 Toss QR 코드를 만들어보세요.">
+    <meta itemprop="image" content="https://toss.im/assets/img/og_image_qrcode.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toss QR 만들기">
+    <meta name="og:description" content="송금을 간편하게 해주는 Toss QR 코드를 만들어보세요.">
+    <meta name="og:image" content="https://toss.im/assets/img/og_image_qrcode.png">
+    <meta name="og:url" content="https://toss.im/pages/qr/create">
+    <meta name="og:site_name" content="Toss QR 만들기">
+    <meta name="og:locale" content="ko_KR">
+    <meta name="og:video" content="https://toss.wistia.com/medias/swy3qvd159?wtime=0s">
+    <meta name="og:type" content="website">
+
+    <!-- Toss 공용 CSS 문서의 맨 처음에 와야 합니다;-->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-1.1.8.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/jquery.fullPage.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/tossqrgen.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MZS4GB9');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZS4GB9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="toss-qr-gen">
+        <div id="fullpage" class="container">
+            <div id="section-1" class="section">
+                <div class="logo">
+                    <i class="i-logotype"></i> <span>QR</span>
+                </div>
+                <div class="introduction">
+                    <p>
+                        매장에서 현금을 받기 위해<br> 긴 계좌번호를 일일히 불러주고 계신가요?
+                        <br>QR코드 만들어서 붙이면 불러줄 필요없이 1초만에 입력 완료!
+                    </p>
+                    <script src="https://fast.wistia.com/embed/medias/swy3qvd159.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><span class="wistia_embed wistia_async_swy3qvd159 popover=true popoverContent=link" style="display:inline"><a href="#" class="btn btn-sm btn-success-b" style="background-color: transparent; color: white; border-color: white;"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> 작동 영상 보기</a></span>
+                </div>
+                <div class="container-form width-360px">
+                    <select class="form-control input-lg select">
+                        <option value="0">은행</option>
+                        <option value="1">KB국민</option>
+                        <option value="2">우리</option>
+                        <option value="3">경남</option>
+                    </select>
+                    <input type="tel" class="form-control input-lg" style="display: inline-block;" placeholder="계좌번호">
+                    <button id="create-qrcode" class="btn btn-success btn-lg btn-block">QR코드 만들기</button>
+                </div>
+                
+            </div>
+            <div id="section-2" class="section">
+                <div>
+                    <img class="qrcode" src="assets/images/toss_qrcode.png" alt="qrcode" />
+                </div>
+                <div class="width-360px">
+                    <div class="input-group">
+                        <input type="text" class="form-control" value="https://toss.im/pages/qr/send?id=12a401e9" readonly>
+                        <span class="input-group-btn"> <button class="btn btn-default" type="button">링크 복사</button></span>
+                    </div>
+                    <br>
+                    <button id="copy-qrcode" class="btn btn-accent btn-block">QR Code 다운로드</button>
+                    <button id="retry-qrcode" class="btn btn-accent-b btn-block">다시 만들기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toss JS Framework CDN -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://toss.im/tossframe/assets/javascripts/tossframe.js"></script>
+    <script src="assets/js/jquery.fullPage.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#fullpage').fullpage();
+            $('#section-2').hide();
+        })
+        $("#create-qrcode").click(function () {
+            $('#section-2').show();
+            $.fn.fullpage.moveSectionDown();
+        });
+        $("#retry-qrcode").click(function () {
+            $.fn.fullpage.moveSectionUp();
+        });
+    </script>
+
+</body>
+
+</html>

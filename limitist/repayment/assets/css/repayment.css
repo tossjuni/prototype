@@ -1,0 +1,79 @@
+#toss-qr-gen .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#toss-qr-gen .section {
+    padding: 0 16px;
+}
+
+#toss-qr-gen #section-1 {
+    background-color: #3e63bc;
+}
+
+#toss-qr-gen #section-2 {
+    background-color: #ffffff;
+}
+
+#toss-qr-gen #section-1 .logo {
+    margin: 0 auto 12px auto;
+    font-size: 34px;
+    color: #fff;
+}
+
+#toss-qr-gen #section-1 .introduction p {
+    font-size: 14px;
+    color: #fff;
+}
+
+#toss-qr-gen .logo .i-logotype {
+    font-size: 28px;
+}
+
+#toss-qr-gen .container .width-360px {
+    max-width: 360px;
+    margin: 0 auto 48px auto;
+}
+
+#toss-qr-gen .container .container-form input {
+    margin: 6px 0;
+}
+
+#toss-qr-gen .btn,
+#toss-qr-gen input,
+#toss-qr-gen select {
+    border-radius: 3px;
+}
+
+#toss-qr-gen .btn-success {
+    box-shadow: 0px 2px #40b59b;
+}
+
+#toss-qr-gen .btn-success:active {
+    background-color: #40b59b;
+}
+
+#toss-qr-gen .btn-link {
+    text-decoration: underline;
+}
+
+#toss-qr-gen .container .btn-link:hover {
+    color: #40b59b;
+}
+
+#toss-qr-gen img.qrcode {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+}
+
+@media screen and (max-width: 414px) {
+    #toss-qr-gen .fp-tableCell {
+        display: block;
+        vertical-align: top;
+        padding-top: 24px;
+    }
+}
