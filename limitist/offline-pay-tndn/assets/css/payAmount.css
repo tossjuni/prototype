@@ -1,0 +1,28 @@
+.wrapper {
+    height: 100vh;
+}
+
+header {
+    margin-top: 13vh;
+}
+
+header .amount {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    font-weight: 300;
+}
+
+header .amount .won {
+    font-size: 2rem;
+}
+
+.keypad table {
+    width: 100%;
+}
+
+.keypad table td {
+    width: 33.33%;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1.2rem 0;
+}

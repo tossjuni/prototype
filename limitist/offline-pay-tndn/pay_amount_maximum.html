@@ -1,0 +1,54 @@
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>결제 금액 입력</title>
+
+    <!-- Toss 공용 CSS 문서의 맨 처음에 와야 합니다;-->
+    <link href="https://toss.im/frame/assets/stylesheets/tossframe-2.0.3.css" rel="stylesheet">
+    <link href="assets/css/payAmount.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper gray0">
+        <header class="text-center">
+            <label class="orange500-text">최대 200만원까지만 가능합니다.</label>
+            <div class="amount elephant800-text mt-1">2,000,000</div>
+        </header>
+        <div class="keypad fixed-bottom">
+            <table class="elephant100 elephant800-text">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>000</td>
+                    <td>0</td>
+                    <td><span class="oi oi-arrow-thick-left"></span></td>
+                </tr>
+            </table>
+            <button class="btn btn-block btn-lg btn-accent rounded-0">다음</button>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then tossframe(Bootstrap) JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://toss.im/frame/assets/javascripts/tossframe-2.0.0.js"></script>
+</body>
+
+</html>
