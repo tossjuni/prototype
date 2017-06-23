@@ -1,0 +1,92 @@
+.container {
+    max-width: 414px;
+}
+
+.form-inline .form-control {
+    background-color: white;
+}
+
+section {
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    background-color: #5c6476;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: 13px;
+}
+
+h6 {
+    line-height: 1.4rem;
+}
+
+p,
+li {
+    font-size: 13px;
+}
+
+#info h2 {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+#info ul {
+    padding-left: 1.2rem;
+}
+
+#option .order-option {
+    width: 100%;
+}
+
+#option ul {
+    padding-left: 0;
+}
+
+#option .item {
+    padding: 16px;
+    margin: 8px 0;
+    background-color: #eaedf3;
+}
+
+#option li {
+    list-style: none;
+}
+
+#option li h2 {
+    font-size: 13px;
+    margin: 0 0 4px;
+}
+
+#option .qty {
+    float: right;
+    margin-top: -10px;
+}
+
+#option select {
+    width: 80px;
+    display: inline;
+}
+
+#option div.selection {
+    font-size: 20px;
+}
+
+#option .total-price {
+    text-align: right;
+    font-size: 24px;
+    padding: 16px 16px 24px;
+    line-height: 1;
+}
+
+#option .desc {
+    font-size: 13px;
+    vertical-align: top;
+}
