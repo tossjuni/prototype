@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div id="screen">
       <tabBar></tabBar>
       <div class="tab-content">
           <ProductList>
           </ProductList>
       </div>
+    <PurchaseHistory></PurchaseHistory>
   </div>
 </template>
 
@@ -23,7 +24,8 @@ export default {
   },
   components: {
     tabBar,
-    ProductList
+    ProductList,
+    PurchaseHistory
   },
   data: () => {
     return {
@@ -33,7 +35,7 @@ export default {
 }
 </script>
 <style>
-body {
+#screen {
   background-color: #eaedf3;
 }
 </style>
