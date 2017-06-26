@@ -1,10 +1,7 @@
 <template>
   <div id="screen">
-      <tabBar></tabBar>
-      <div class="tab-content">
-          <ProductList>
-          </ProductList>
-      </div>
+    <tabBar></tabBar>
+    <ProductList></ProductList>
     <PurchaseHistory></PurchaseHistory>
   </div>
 </template>
@@ -35,7 +32,7 @@ export default {
 }
 </script>
 <style>
-#screen {
-  background-color: #eaedf3;
-}
+  body {
+    background-color: #eaedf3;
+  }
 </style>
