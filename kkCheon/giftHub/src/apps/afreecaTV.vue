@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import giftHeader from '@/components/giftHeader'
+import giftHeader from '../components/giftHeader.vue'
 import purchaseForm from '@/components/purchaseForm'
 import giftInfo from '@/components/giftInfo'
 

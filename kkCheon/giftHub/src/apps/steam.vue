@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="screen">
     <giftHeader :title="headerTitle" :subtitle="headerSubtitle" :bannerImg="bannerImg" :bannerBgColor="bannerBgColor"></giftHeader>
     <purchaseForm :items="purchaseItems" :totalPrice="totalPrice"></purchaseForm>
     <giftInfo></giftInfo>
@@ -48,3 +48,8 @@ export default {
   }
 }
 </script>
+<style>
+  #screen {
+    background-color: white;
+  }
+</style>

@@ -5,7 +5,7 @@
     <section id="option">
       <form action="" id="formToPay">
         <div class="order-option">
-          <blockSelect v-for="item in items" v-bind:block="item" v-bind:key="item.id"></blockSelect>
+          <BlockSelect v-for="item in items" v-bind:block="item" v-bind:key="item.id"></BlockSelect>
         </div>
       </form>
     </section>
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import blockSelect from '@/components/block-select'
+import BlockSelect from '../components/BlockSelect.vue'
 
 export default {
   name: 'purchaseForm',
   props: ['items', 'totalPrice'],
   components: {
-    blockSelect
+    BlockSelect
   }
 }
 </script>

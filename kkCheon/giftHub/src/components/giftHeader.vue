@@ -13,7 +13,6 @@
 
 <script>
 export default {
-  name: 'giftHeader',
   props: ['title', 'subtitle', 'bannerImg', 'bannerBgColor']
 }
 </script>

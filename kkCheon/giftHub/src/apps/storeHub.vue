@@ -1,5 +1,5 @@
 <template>
-  <div id="screen">
+  <div id="storeScreen">
     <tabBar></tabBar>
     <ProductList></ProductList>
     <PurchaseHistory></PurchaseHistory>
@@ -24,7 +24,7 @@ export default {
     ProductList,
     PurchaseHistory
   },
-  data: () => {
+  data() {
     return {
 
     }
@@ -32,7 +32,7 @@ export default {
 }
 </script>
 <style>
-  body {
+  #storeScreen {
     background-color: #eaedf3;
   }
 </style>

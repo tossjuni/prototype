@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="item-list p-3">
+    <ul class="item-list p-3 mb-0">
       <li class="item-card list-unstyled p-3 bb-1 gray0">
         <table class="w-100 mb-4">
           <tr>

@@ -11,25 +11,24 @@ Vue.use(Router)
 Vue.use(Meta)
 
 export default new Router({
-  mode: 'history',
   routes: [
     {
-      path: '/service',
+      path: '/',
       name: 'storeHub',
       component: storeHub
     },
     {
-      path: '/service/steam',
+      path: '/steam',
       name: 'steam',
       component: steam
     },
     {
-      path: '/service/googlePlayGift',
+      path: '/googlePlayGift',
       name: 'googlePlayGift',
       component: googlePlayGift
     },
     {
-      path: '/service/afreecaTV',
+      path: '/afreecaTV',
       name: 'afreecaTV',
       component: afreecaTV
     }

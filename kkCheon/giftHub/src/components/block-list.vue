@@ -4,7 +4,7 @@
       <table class="w-100">
         <tr>
           <td class="block-icon">
-            <div class="icon" v-bind:style="{ backgroundImage: 'url(' + item.imgUrl + ')' }"></div>
+            <div class="icon" :style="{ backgroundImage: 'url(' + item.imgUrl + ')' }"></div>
           </td>
           <td class="block-text pl-3 pt-2">
             <h2 class="h5 mb-0">{{ item.title }}</h2>
