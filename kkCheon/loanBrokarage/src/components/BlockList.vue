@@ -3,12 +3,13 @@
     <a :href="list.linkUrl">
       <div class="block-card p-4">
         <div class="table mb-0">
-          <div class="banner-headline cell align-top mr-3">
-            <h1 class="h5 bold">{{ list.title }}</h1>
-            <p><span class="tag mr-2 elephant600-text">금리</span>{{ list.interest }}</p>
-            <p><span class="tag mr-2 elephant600-text">한도</span>{{ list.limitPrice }}</p>
+          <div class="banner-headline cell mr-3">
+            <h1 class="h6 bold gray800-text mr-3">{{ list.title }}</h1>
+            <p class="blue500-text"><span class="tag mr-2 gray600-text">금리</span>{{ list.interest }}</p>
+            <p><span class="tag mr-2 gray600-text">한도</span>{{ list.limitPrice }}</p>
+            <p><span class="tag mr-2 gray600-text">기간</span>{{ list.limitPeriod }}</p>
           </div>
-          <div class="banner-image cell text-right">
+          <div class="banner-image cell text-right align-middle">
             <div class="frame-image mr-0 d-inline-block" :style="{ backgroundImage: 'url(' + list.imgUrl + ')' }"></div>
           </div>
         </div>
@@ -39,4 +40,5 @@ export default {
   .table p, .table h2 { margin-bottom: 0; }
   .h7 { font-size: 13px; }
   .lh-lose { line-height: 1.4; }
+  .h6 { font-size: 18px; line-height: 1.4;}
 </style>
