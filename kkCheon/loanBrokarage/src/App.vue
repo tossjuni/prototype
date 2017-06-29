@@ -3,20 +3,22 @@
 
     <!-- 배너영역 -->
     <div class="banner elephant100">
-      <div class="bannerHeader text-center pt-4"><h1 class="h5 elephant800-text">이달의 추천상품</h1></div>
-      <carousel-3d :autoplay="true"
+      <div class="bannerHeader text-center pt-4">
+        <h1 class="h6 bold mb-0 mt-2 gray700-text">이달의 추천상품</h1>
+      </div>
+      <carousel-3d
+                   :autoplay="true"
                    :class="m-0"
                    :controls-visible="false"
                    :clickable="false"
                    :autoplayTimeout="3500"
+                   :autoplayHoverPause="true"
                    >
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
           <block-banner :banner="serviceRecommendList[i]"></block-banner>
         </slide>
       </carousel-3d>
     </div>
-
-
     <block-list v-for="list in serviceList" :list="list" :key="serviceList.key"></block-list>
   </div>
 </template>
@@ -45,12 +47,13 @@ export default {
       serviceRecommendList: [
         {
           key: '2',
-          title: 'SBI 중금리바빌론',
+          title: 'SBI저축은행 중금리바빌론',
           subTitle: '직장인 대상 무보증, 무방문으로 최고 1억원까지 신청 가능',
           imgUrl: require('./assets/icon-sbi.png'),
           interest: '연 5.9% ~ 17.9%',
-          limitPrice: '1억 원',
+          limitPrice: '1억원',
           limitPeriod: '최대 84개월',
+          promotion: false,
           linkUrl: 'https://m.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
         },
         {
@@ -58,19 +61,21 @@ export default {
           title: '신한카드 즉시대출',
           subTitle: '신한카드가 없어도 OK! 주부, 프리랜서도 대출 가능',
           imgUrl: require('./assets/icon-shinhan.png'),
-          interest: '연 6.0% ~ 27.0%',
-          limitPrice: '5천만 원',
+          interest: '연 7.0% ~ 27.0%',
+          limitPrice: '5천만원',
           limitPeriod: '최대 36개월',
+          promotion: 'true',
           linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0140'
         },
         {
           key: '5',
           title: '우리카드 신용대출',
-          subTitle: '한도조회부터 대출금 입금까지 24시간 언제나 즉시입금 가능',
+          subTitle: '우리카드가 없어도 대출 가능24시간 언제나 즉시입금 가능',
           imgUrl: require('./assets/icon-woori.png'),
           interest: '연 4.9% ~ 24.9%',
-          limitPrice: '3천만 원',
+          limitPrice: '3천만원',
           limitPeriod: '최대 36개월',
+          promotion: false,
           linkUrl: 'https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130'
         },
         {
@@ -79,30 +84,33 @@ export default {
           subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
           imgUrl: require('./assets/icon-hf.png'),
           interest: '연 3.9% ~ 18.9%',
-          limitPrice: '3천만 원',
+          limitPrice: '3천만원',
           limitPeriod: '최대 36개월',
+          promotion: false,
           linkUrl: 'https://www.honest-fund.com/loan/guide'
         }
       ],
       serviceList: [
         {
           key: '1',
-          title: 'SBI 스피드론',
+          title: 'SBI저축은행 스피드론',
           subTitle: '무보증, 무방문으로 최대 1,000만원까지 신청 가능',
           imgUrl: require('./assets/icon-sbi.png'),
           interest: '연 19.9% ~ 27.9%',
-          limitPrice: '1,000만 원',
+          limitPrice: '1,000만원',
           limitPeriod: '최대 60개월',
+          promotion: false,
           linkUrl: 'https://m.babilloan.com/APCMOBprd0102g.web?prodCd=710078'
         },
         {
           key: '2',
-          title: 'SBI 중금리바빌론',
+          title: 'SBI저축은행 중금리바빌론',
           subTitle: '직장인 대상 무보증, 무방문으로 최고 1억원까지 신청 가능',
           imgUrl: require('./assets/icon-sbi.png'),
           interest: '연 5.9% ~ 17.9%',
-          limitPrice: '1억 원',
-          limitPeriod: '84개월',
+          limitPrice: '1억원',
+          limitPeriod: '최대 84개월',
+          promotion: false,
           linkUrl: 'https://m.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
         },
         {
@@ -110,9 +118,10 @@ export default {
           title: '신한카드 즉시대출',
           subTitle: '신한카드가 없어도 OK! 주부, 프리랜서도 대출 가능',
           imgUrl: require('./assets/icon-shinhan.png'),
-          interest: '연 6.0% ~ 27.0%',
-          limitPrice: '5,000만 원',
-          limitPeriod: '36개월',
+          interest: '연 7.0% ~ 27.0%',
+          limitPrice: '5,000만원',
+          limitPeriod: '최대 36개월',
+          promotion: true,
           linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0140'
         },
         {
@@ -120,10 +129,11 @@ export default {
           title: '신한카드 직장인대출',
           subTitle: '직장건강보험가입만으로도 누구나!',
           imgUrl: require('./assets/icon-shinhan.png'),
-          interest: '연 7.0 ~ 27.0%',
-          limitPrice: '5,000만 원',
-          limitPeriod: '48개월',
-          linkUrl: '#'
+          interest: '연 6.0% ~ 27.0%',
+          limitPrice: '5,000만원',
+          limitPeriod: '최대 48개월',
+          promotion: true,
+          linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0141'
         },
         {
           key: '5',
@@ -131,8 +141,9 @@ export default {
           subTitle: '한도조회부터 대출금 입금까지 24시간 언제나 즉시입금 가능',
           imgUrl: require('./assets/icon-woori.png'),
           interest: '연 4.9% ~ 24.9%',
-          limitPrice: '3,000만 원',
-          limitPeriod: '36개월',
+          limitPrice: '3,000만원',
+          limitPeriod: '최대 36개월',
+          promotion: false,
           linkUrl: 'https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130'
         },
         // {
@@ -150,8 +161,9 @@ export default {
           subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
           imgUrl: require('./assets/icon-hf.png'),
           interest: '연 3.9% ~ 18.9%',
-          limitPrice: '3,000만 원',
-          limitPeriod: '36개월',
+          limitPrice: '3,000만원',
+          limitPeriod: '최대 36개월',
+          promotion: false,
           linkUrl: 'http://www.honest-fund.com/loan/guide'
         },
         {
@@ -160,8 +172,9 @@ export default {
           subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
           imgUrl: require('./assets/icon-hf.png'),
           interest: '연 3.9% ~ 18.9%',
-          limitPrice: '3,000만 원',
-          limitPeriod: '36개월',
+          limitPrice: '3,000만원',
+          limitPeriod: '최대 36개월',
+          promotion: false,
           linkUrl: 'https://www.honest-fund.com/loan/guide'
         }
       ]
@@ -175,12 +188,12 @@ export default {
   *, h1, h2, h3, h4, h5, h6 { word-break: keep-all; }
   a, a:hover, a:active, a:focus { text-decoration: none; color: #3d424e; }
   .carousel-3d-container{
-    height: 260px !important;
+    height: 270px !important;
 
   }
   .carousel-3d-slider {
     /* width: 100% !important; */
-    height: 260px !important;
+    height: 270px !important;
     /* background-color: gray; */
   }
   .carousel-3d-slide {
@@ -188,7 +201,7 @@ export default {
     background-color: transparent !important;
     margin: auto;
     /* width: 100% !important; */
-    height: 260px !important;
+    height: 270px !important;
     box-shadow:
   }
 </style>
