@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-
+    <div class="notice text-center py-3 blue600 blue100-text h7">
+      <p class="mb-0"><span class="oi oi-bullhorn pr-2"></span> 대출한도 조회는 신용등급에 영향이 없습니다</p>
+    </div>
     <!-- 배너영역 -->
-    <div class="banner elephant100">
-      <div class="bannerHeader text-center pt-4">
-        <h1 class="h6 bold mb-0 mt-2 gray700-text">이달의 추천상품</h1>
+    <div class="banner blue500">
+      <div class="bannerHeader text-center pt-3">
+        <h1 class="h6 mb-0 mt-2 gray0-text">이달의 추천상품</h1>
       </div>
       <carousel-3d
                    :autoplay="true"
-                   :class="m-0"
+
                    :controls-visible="false"
                    :clickable="false"
-                   :autoplayTimeout="3500"
+                   :autoplayTimeout="4000"
                    :autoplayHoverPause="true"
                    >
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
@@ -19,7 +21,7 @@
         </slide>
       </carousel-3d>
     </div>
-    <block-list v-for="list in serviceList" :list="list" :key="serviceList.key"></block-list>
+    <block-list class="list" v-for="list in serviceList" :list="list" :key="serviceList.key"></block-list>
   </div>
 </template>
 
@@ -70,7 +72,7 @@ export default {
         {
           key: '5',
           title: '우리카드 신용대출',
-          subTitle: '우리카드가 없어도 대출 가능24시간 언제나 즉시입금 가능',
+          subTitle: '우리카드가 없어도 대출 가능 24시간 언제나 즉시입금 가능',
           imgUrl: require('./assets/icon-woori.png'),
           interest: '연 4.9% ~ 24.9%',
           limitPrice: '3천만원',
@@ -188,12 +190,13 @@ export default {
   *, h1, h2, h3, h4, h5, h6 { word-break: keep-all; }
   a, a:hover, a:active, a:focus { text-decoration: none; color: #3d424e; }
   .carousel-3d-container{
-    height: 270px !important;
-
+    height: 300px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
   }
   .carousel-3d-slider {
     /* width: 100% !important; */
-    height: 270px !important;
+    height: 300px !important;
     /* background-color: gray; */
   }
   .carousel-3d-slide {
@@ -201,7 +204,8 @@ export default {
     background-color: transparent !important;
     margin: auto;
     /* width: 100% !important; */
-    height: 270px !important;
+    height: 300px !important;
     box-shadow:
   }
+  .h7 { font-size: 14px; }
 </style>

@@ -1,16 +1,16 @@
 <template>
   <div class="bb-1">
     <a :href="list.linkUrl">
-      <div class="block-card px-4 py-3">
-        <h1 class="h6 bold gray800-text d-inline-block">{{ list.title }} <span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
-        <div class="table mb-0 align-top">
-          <div class="banner-headline cell mr-3 w-100">
-            <p class="blue500-text"><span class="tag mr-2 gray600-text">금리</span>{{ list.interest }}</p>
-            <p><span class="tag mr-2 gray600-text">한도</span>최대 {{ list.limitPrice }}</p>
-            <p><span class="tag mr-2 gray600-text">기간</span>{{ list.limitPeriod }}</p>
+      <div v-bind:id="list.title" class="block-list px-4 py-3">
+        <h1 v-bind:id="list.title" class="h6 gray800-text d-inline-block">{{ list.title }} <span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
+        <div v-bind:id="list.title" class="table mb-0 align-top">
+          <div v-bind:id="list.title" class="banner-headline cell mr-3 w-100">
+            <p v-bind:id="list.title" class="blue500-text"><span v-bind:id="list.title" class="tag mr-2 gray600-text">금리</span>{{ list.interest }}</p>
+            <p v-bind:id="list.title" ><span v-bind:id="list.title" class="tag mr-2 gray600-text">한도</span>최대 {{ list.limitPrice }}</p>
+            <p v-bind:id="list.title" ><span v-bind:id="list.title" class="tag mr-2 gray600-text">기간</span>{{ list.limitPeriod }}</p>
           </div>
-          <div class="banner-image cell text-right align-bottom">
-            <div class="frame-image mr-0 d-inline-block align-bottom" :style="{ backgroundImage: 'url(' + list.imgUrl + ')' }"></div>
+          <div v-bind:id="list.title" class="banner-image cell text-right align-bottom">
+            <div v-bind:id="list.title" class="frame-image mr-0 d-inline-block align-bottom" :style="{ backgroundImage: 'url(' + list.imgUrl + ')' }"></div>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-  .block-card {
+  .block-list {
     max-width: 360px;
     margin: auto;
   }
@@ -49,5 +49,8 @@ export default {
     padding: 1px 4px;
     border-radius: 2px;
     display: inline-block;
+  }
+  p {
+    font-size: 14px;
   }
 </style>
