@@ -5,8 +5,8 @@
     </div>
     <!-- 배너영역 -->
     <div class="banner blue500">
-      <div class="bannerHeader text-center pt-3">
-        <h1 class="h6 mb-0 mt-2 gray0-text">이달의 추천상품</h1>
+      <div class="bannerHeader text-center py-4">
+        <h1 class="h6 mb-0 gray0-text">이달의 추천상품</h1>
       </div>
       <carousel-3d
                    :autoplay="true"
@@ -17,7 +17,7 @@
                    :autoplayHoverPause="true"
                    >
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
-          <block-banner :banner="serviceRecommendList[i]"></block-banner>
+          <block-card :banner="serviceRecommendList[i]"></block-card>
         </slide>
       </carousel-3d>
     </div>
@@ -28,13 +28,13 @@
 <script>
 
 import Vue from 'vue';
-import BlockBanner from './components/BlockBanner'
+import BlockCard from './components/BlockCard'
 import BlockList from './components/BlockList'
 
 export default {
   name: 'app',
   components: {
-    BlockBanner,
+    BlockCard,
     BlockList
   },
   metaInfo: {
@@ -49,17 +49,19 @@ export default {
       serviceRecommendList: [
         {
           key: '2',
-          title: 'SBI저축은행 중금리바빌론',
+          bankName: 'SBI저축은행',
+          title: '중금리바빌론',
           subTitle: '직장인 대상 무보증, 무방문으로 최고 1억원까지 신청 가능',
           imgUrl: require('./assets/icon-sbi.png'),
           interest: '연 5.9% ~ 17.9%',
           limitPrice: '1억원',
           limitPeriod: '최대 84개월',
           promotion: false,
-          linkUrl: 'https://m.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
+          linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
         },
         {
           key: '3',
+          bankName: '신한카드',
           title: '신한카드 즉시대출',
           subTitle: '신한카드가 없어도 OK! 주부, 프리랜서도 대출 가능',
           imgUrl: require('./assets/icon-shinhan.png'),
@@ -71,6 +73,7 @@ export default {
         },
         {
           key: '5',
+          bankName: '우리카드',
           title: '우리카드 신용대출',
           subTitle: '우리카드가 없어도 대출 가능 24시간 언제나 즉시입금 가능',
           imgUrl: require('./assets/icon-woori.png'),
@@ -81,15 +84,16 @@ export default {
           linkUrl: 'https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130'
         },
         {
-          key: '8',
-          title: '어니스트펀드 채무 통합대출',
+          key: '7',
+          bankName: '어니스트펀드',
+          title: '직장인 신용대출',
           subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
           imgUrl: require('./assets/icon-hf.png'),
           interest: '연 3.9% ~ 18.9%',
           limitPrice: '3천만원',
           limitPeriod: '최대 36개월',
           promotion: false,
-          linkUrl: 'https://www.honest-fund.com/loan/guide'
+          linkUrl: 'https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower'
         }
       ],
       serviceList: [
@@ -102,7 +106,7 @@ export default {
           limitPrice: '1,000만원',
           limitPeriod: '최대 60개월',
           promotion: false,
-          linkUrl: 'https://m.babilloan.com/APCMOBprd0102g.web?prodCd=710078'
+          linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078'
         },
         {
           key: '2',
@@ -113,7 +117,7 @@ export default {
           limitPrice: '1억원',
           limitPeriod: '최대 84개월',
           promotion: false,
-          linkUrl: 'https://m.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
+          linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
         },
         {
           key: '3',
@@ -166,7 +170,7 @@ export default {
           limitPrice: '3,000만원',
           limitPeriod: '최대 36개월',
           promotion: false,
-          linkUrl: 'http://www.honest-fund.com/loan/guide'
+          linkUrl: 'https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower'
         },
         {
           key: '8',
@@ -177,7 +181,7 @@ export default {
           limitPrice: '3,000만원',
           limitPeriod: '최대 36개월',
           promotion: false,
-          linkUrl: 'https://www.honest-fund.com/loan/guide'
+          linkUrl: 'https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower'
         }
       ]
     }
@@ -190,13 +194,13 @@ export default {
   *, h1, h2, h3, h4, h5, h6 { word-break: keep-all; }
   a, a:hover, a:active, a:focus { text-decoration: none; color: #3d424e; }
   .carousel-3d-container{
-    height: 300px !important;
+    height: 280px !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
   }
   .carousel-3d-slider {
     /* width: 100% !important; */
-    height: 300px !important;
+    height: 280px !important;
     /* background-color: gray; */
   }
   .carousel-3d-slide {
@@ -204,7 +208,7 @@ export default {
     background-color: transparent !important;
     margin: auto;
     /* width: 100% !important; */
-    height: 300px !important;
+    height: 280px !important;
     box-shadow:
   }
   .h7 { font-size: 14px; }

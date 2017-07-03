@@ -1,25 +1,26 @@
 <template>
   <div>
     <a :href="banner.linkUrl">
-      <div v-bind:id="banner.title" class="block-card px-4 my-3">
+      <div v-bind:id="banner.title" class="block-card p-4">
         <div v-bind:id="banner.title" class="table">
           <div v-bind:id="banner.title" class="banner-image cell">
             <div v-bind:id="banner.title" class="frame-image mr-3" :style="{ backgroundImage: 'url(' + banner.imgUrl + ')' }"></div>
           </div>
           <div v-bind:id="banner.title" class="banner-headline cell align-top w-100">
-            <h1 v-bind:id="banner.title" class="h5 bold mb-1">{{ banner.title }}</h1>
-            <p v-bind:id="banner.title" class="gray600-text">금리<span class="ml-1 blue500-text">{{ banner.interest }}</span></p>
+            <h6 v-bind:id="banner.title" class="h7 mb-1">{{ banner.bankName }}</h6>
+            <h1 v-bind:id="banner.title" class="h5 bold mb-0">{{ banner.title }}</h1>
           </div>
         </div>
-        <h2 v-bind:id="banner.title" class="h6 mb-4 lh-lose gray700-text text-left">{{ banner.subTitle }}</h2>
+        <p v-bind:id="banner.title" class="gray600-text mb-2">금리<span class="bold ml-1 blue500-text">{{ banner.interest }}</span></p>
+        <h2 v-bind:id="banner.title" class="h65 mb-3 lh-lose gray700-text text-left">{{ banner.subTitle }}</h2>
         <div v-bind:id="banner.title" class="table mb-0">
           <div v-bind:id="banner.title" class="banner-detail-2 w-40 cell bl-2-gray200 pl-3">
             <p v-bind:id="banner.title" class="h7 elephant700-text">한도</p>
-            <p v-bind:id="banner.title" class="blue500-text">최대 {{ banner.limitPrice }}</p>
+            <p v-bind:id="banner.title" class="h7 blue500-text bold">최대 {{ banner.limitPrice }}</p>
           </div>
           <div v-bind:id="banner.title" class="banner-detail-2 w-40 cell bl-2-gray200 pl-3">
             <p v-bind:id="banner.title" class="h7 elephant700-text">기간</p>
-            <p v-bind:id="banner.title" class="blue500-text">{{ banner.limitPeriod }}</p>
+            <p v-bind:id="banner.title" class="h7 blue500-text bold">{{ banner.limitPeriod }}</p>
           </div>
         </div>
       </div>
@@ -50,6 +51,7 @@ export default {
     background-size: 40px 40px;
   }
   .h5 { font-size: 18px; line-height: 1.2;}
+  .h65 { font-size: 16px; line-height: 1.2;}
   .table { display: table; }
   .cell { display: table-cell; }
   .table p, .table h2 { margin-bottom: 0; }
