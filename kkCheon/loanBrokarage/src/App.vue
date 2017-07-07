@@ -17,19 +17,29 @@
                    :autoplayHoverPause="true"
                    >
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
-          <block-card :banner="serviceRecommendList[i]"></block-card>
+          <block-card :card="serviceRecommendList[i]" :os="os"></block-card>
         </slide>
       </carousel-3d>
     </div>
-    <block-list class="list" v-for="list in serviceList" :list="list" :key="serviceList.key"></block-list>
+    <block-list class="list" v-for="list in serviceList" :list="list" :os="os" :key="serviceList.key"></block-list>
   </div>
 </template>
 
 <script>
 
-import Vue from 'vue';
+import Vue from 'vue'
+import Urlencode from 'urlencode'
+import MobileDetect from 'mobile-detect'
 import BlockCard from './components/BlockCard'
 import BlockList from './components/BlockList'
+
+var md = new MobileDetect(window.navigator.userAgent);
+if( md.os() == 'iOS' ){
+  var slideLength = 3;
+} else {
+  slideLength = 5;
+}
+console.log(slideLength);
 
 export default {
   name: 'app',
@@ -45,112 +55,145 @@ export default {
   },
   data() {
     return {
-      slides: 4,
+      os: md.os(),
+      slides: slideLength,
       serviceRecommendList: [
         {
-          key: '2',
-          bankName: 'SBI저축은행',
-          title: '중금리바빌론',
-          subTitle: '직장인 대상 무보증, 무방문으로 최고 1억원까지 신청 가능',
-          imgUrl: require('./assets/icon-sbi.png'),
-          interest: '연 5.9% ~ 17.9%',
-          limitPrice: '1억원',
-          limitPeriod: '최대 84개월',
-          promotion: false,
-          linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
-        },
-        {
-          key: '3',
-          bankName: '신한카드',
-          title: '신한카드 즉시대출',
-          subTitle: '신한카드가 없어도 OK! 주부, 프리랜서도 대출 가능',
-          imgUrl: require('./assets/icon-shinhan.png'),
-          interest: '연 7.0% ~ 27.0%',
-          limitPrice: '5천만원',
-          limitPeriod: '최대 36개월',
-          promotion: 'true',
-          linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0140'
-        },
-        {
-          key: '5',
-          bankName: '우리카드',
-          title: '우리카드 신용대출',
-          subTitle: '우리카드가 없어도 대출 가능 24시간 언제나 즉시입금 가능',
-          imgUrl: require('./assets/icon-woori.png'),
-          interest: '연 4.9% ~ 24.9%',
-          limitPrice: '3천만원',
-          limitPeriod: '최대 36개월',
-          promotion: false,
-          linkUrl: 'https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130'
-        },
-        {
-          key: '7',
-          bankName: '어니스트펀드',
-          title: '직장인 신용대출',
-          subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
-          imgUrl: require('./assets/icon-hf.png'),
-          interest: '연 3.9% ~ 18.9%',
-          limitPrice: '3천만원',
-          limitPeriod: '최대 36개월',
-          promotion: false,
-          linkUrl: 'https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower'
-        }
-      ],
-      serviceList: [
-        {
           key: '1',
-          title: 'SBI저축은행 스피드론',
+          bankName: 'SBI저축은행',
+          title: '스피드론',
+
           subTitle: '무보증, 무방문으로 최대 1,000만원까지 신청 가능',
           imgUrl: require('./assets/icon-sbi.png'),
           interest: '연 19.9% ~ 27.9%',
           limitPrice: '1,000만원',
           limitPeriod: '최대 60개월',
           promotion: false,
+          external: false,
+          linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078'
+        },
+        {
+          key: '2',
+          bankName: 'SBI저축은행',
+          title: '중금리바빌론',
+
+          subTitle: '직장인 대상 무보증, 무방문으로 최고 1억원까지 신청 가능',
+          imgUrl: require('./assets/icon-sbi.png'),
+          interest: '연 5.9% ~ 17.9%',
+          limitPrice: '1억원',
+          limitPeriod: '최대 84개월',
+          promotion: false, // 리스트 타이틀에 할인 표시 할 것인지 여부
+          external: false, // 링크를 토스 앱 외부의 시스템 기본 브라우져로 열 것인지 여부
+          linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
+        },
+        {
+          key: '3',
+          bankName: '신한카드',
+          title: '신한카드 즉시대출',
+
+          subTitle: '신한카드가 없어도 OK! 주부, 프리랜서도 대출 가능',
+          imgUrl: require('./assets/icon-shinhan.png'),
+          interest: '연 7.0% ~ 27.0%',
+          limitPrice: '5천만원',
+          limitPeriod: '최대 36개월',
+          promotion: 'true',
+          external: false,
+          linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0140'
+        },
+        {
+          key: '5',
+          bankName: '우리카드',
+          title: '우리카드 신용대출',
+
+          subTitle: '우리카드가 없어도 대출 가능 24시간 언제나 즉시입금 가능',
+          imgUrl: require('./assets/icon-woori.png'),
+          interest: '연 4.9% ~ 24.9%',
+          limitPrice: '3천만원',
+          limitPeriod: '최대 36개월',
+          promotion: false,
+          external: true,
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130&lnkid=A02100000000T', 'gbk') + '&external=true'
+        },
+        {
+          key: '7',
+          bankName: '어니스트펀드',
+          title: '직장인 신용대출',
+
+          subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
+          imgUrl: require('./assets/icon-hf.png'),
+          interest: '연 3.9% ~ 18.9%',
+          limitPrice: '3천만원',
+          limitPeriod: '최대 36개월',
+          promotion: false,
+          external: true,
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower', 'gbk') + '&external=true'
+        }
+      ],
+      serviceList: [
+        {
+          key: '1',
+          title: 'SBI저축은행 스피드론',
+
+          subTitle: '무보증, 무방문으로 최대 1,000만원까지 신청 가능',
+          imgUrl: require('./assets/icon-sbi.png'),
+          interest: '연 19.9% ~ 27.9%',
+          limitPrice: '1,000만원',
+          limitPeriod: '최대 60개월',
+          promotion: false,
+          external: false,
           linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078'
         },
         {
           key: '2',
           title: 'SBI저축은행 중금리바빌론',
+
           subTitle: '직장인 대상 무보증, 무방문으로 최고 1억원까지 신청 가능',
           imgUrl: require('./assets/icon-sbi.png'),
           interest: '연 5.9% ~ 17.9%',
           limitPrice: '1억원',
           limitPeriod: '최대 84개월',
           promotion: false,
+          external: false,
           linkUrl: 'http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710381'
         },
         {
           key: '3',
           title: '신한카드 즉시대출',
+
           subTitle: '신한카드가 없어도 OK! 주부, 프리랜서도 대출 가능',
           imgUrl: require('./assets/icon-shinhan.png'),
           interest: '연 7.0% ~ 27.0%',
           limitPrice: '5,000만원',
           limitPeriod: '최대 36개월',
           promotion: true,
+          external: false,
           linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0140'
         },
         {
           key: '4',
           title: '신한카드 직장인대출',
+
           subTitle: '직장건강보험가입만으로도 누구나!',
           imgUrl: require('./assets/icon-shinhan.png'),
           interest: '연 6.0% ~ 27.0%',
           limitPrice: '5,000만원',
           limitPeriod: '최대 48개월',
           promotion: true,
+          external: false,
           linkUrl: 'https://m.shinhancard.com/mob/MOBFM171N/MOBFM171R18.shc?PCD=M0141'
         },
         {
           key: '5',
           title: '우리카드 신용대출',
+
           subTitle: '한도조회부터 대출금 입금까지 24시간 언제나 즉시입금 가능',
           imgUrl: require('./assets/icon-woori.png'),
           interest: '연 4.9% ~ 24.9%',
           limitPrice: '3,000만원',
           limitPeriod: '최대 36개월',
           promotion: false,
-          linkUrl: 'https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130'
+          external: true,
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://sccd.wooribank.com/ccd/Dream?withyou=CDFNS0130&lnkid=A02100000000T', 'gbk') + '&external=true'
         },
         // {
         //   key: '6',
@@ -164,24 +207,28 @@ export default {
         {
           key: '7',
           title: '어니스트펀드 직장인 신용대출',
+
           subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
           imgUrl: require('./assets/icon-hf.png'),
           interest: '연 3.9% ~ 18.9%',
           limitPrice: '3,000만원',
           limitPeriod: '최대 36개월',
           promotion: false,
-          linkUrl: 'https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower'
+          external: true,
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower', 'gbk') + '&external=true'
         },
         {
           key: '8',
           title: '어니스트펀드 채무 통합대출',
+
           subTitle: '최대 3천만원까지 넉넉한 한도, 최저 3.9%부터 중저금리 대출',
           imgUrl: require('./assets/icon-hf.png'),
           interest: '연 3.9% ~ 18.9%',
           limitPrice: '3,000만원',
           limitPeriod: '최대 36개월',
           promotion: false,
-          linkUrl: 'https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower'
+          external: true,
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://www.honest-fund.com/loan/draft?utm_source=toss&utm_medium=connect&utm_content=toss&utm_campaign=borrower', 'gbk') + '&external=true'
         }
       ]
     }

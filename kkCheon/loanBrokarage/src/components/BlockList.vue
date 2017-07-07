@@ -1,5 +1,6 @@
 <template>
-  <div class="bb-1">
+  <div v-if="list.external == true && os == 'iOS'"></div>
+  <div v-else class="bb-1">
     <a :href="list.linkUrl">
       <div v-bind:id="list.title" class="block-list px-4 py-4">
         <h1 v-bind:id="list.title" class="h65 gray800-text d-inline-block mb-2 bold">{{ list.title }} <span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
@@ -20,7 +21,7 @@
 
 <script>
 export default {
-  props: ['list']
+  props: ['list', 'os']
 }
 </script>
 

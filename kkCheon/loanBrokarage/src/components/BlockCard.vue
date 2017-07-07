@@ -1,26 +1,27 @@
 <template>
-  <div>
-    <a :href="banner.linkUrl">
-      <div v-bind:id="banner.title" class="block-card p-4">
-        <div v-bind:id="banner.title" class="table">
-          <div v-bind:id="banner.title" class="banner-image cell">
-            <div v-bind:id="banner.title" class="frame-image mr-3" :style="{ backgroundImage: 'url(' + banner.imgUrl + ')' }"></div>
+  <div v-if="card.external == true && os == 'iOS'"></div>
+  <div v-else>
+    <a :href="card.linkUrl">
+      <div v-bind:id="card.title" class="block-card p-4">
+        <div v-bind:id="card.title" class="table">
+          <div v-bind:id="card.title" class="card-image cell">
+            <div v-bind:id="card.title" class="frame-image mr-3" :style="{ backgroundImage: 'url(' + card.imgUrl + ')' }"></div>
           </div>
-          <div v-bind:id="banner.title" class="banner-headline cell align-top w-100">
-            <h6 v-bind:id="banner.title" class="h7 mb-1">{{ banner.bankName }}</h6>
-            <h1 v-bind:id="banner.title" class="h5 bold mb-0">{{ banner.title }}</h1>
+          <div v-bind:id="card.title" class="card-headline cell align-top w-100">
+            <h6 v-bind:id="card.title" class="h7 mb-1">{{ card.bankName }}</h6>
+            <h1 v-bind:id="card.title" class="h5 bold mb-0">{{ card.title }}</h1>
           </div>
         </div>
-        <p v-bind:id="banner.title" class="gray600-text mb-2">금리<span class="bold ml-1 blue500-text">{{ banner.interest }}</span></p>
-        <h2 v-bind:id="banner.title" class="h65 mb-3 lh-lose gray700-text text-left">{{ banner.subTitle }}</h2>
-        <div v-bind:id="banner.title" class="table mb-0">
-          <div v-bind:id="banner.title" class="banner-detail-2 w-40 cell bl-2-gray200 pl-3">
-            <p v-bind:id="banner.title" class="h7 elephant700-text">한도</p>
-            <p v-bind:id="banner.title" class="h7 blue500-text bold">최대 {{ banner.limitPrice }}</p>
+        <p v-bind:id="card.title" class="gray600-text mb-2">금리<span class="bold ml-1 blue500-text">{{ card.interest }}</span></p>
+        <h2 v-bind:id="card.title" class="h65 mb-3 lh-lose gray700-text text-left">{{ card.subTitle }}</h2>
+        <div v-bind:id="card.title" class="table mb-0">
+          <div v-bind:id="card.title" class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
+            <p v-bind:id="card.title" class="h7 elephant700-text">한도</p>
+            <p v-bind:id="card.title" class="h7 blue500-text bold">최대 {{ card.limitPrice }}</p>
           </div>
-          <div v-bind:id="banner.title" class="banner-detail-2 w-40 cell bl-2-gray200 pl-3">
-            <p v-bind:id="banner.title" class="h7 elephant700-text">기간</p>
-            <p v-bind:id="banner.title" class="h7 blue500-text bold">{{ banner.limitPeriod }}</p>
+          <div v-bind:id="card.title" class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
+            <p v-bind:id="card.title" class="h7 elephant700-text">기간</p>
+            <p v-bind:id="card.title" class="h7 blue500-text bold">{{ card.limitPeriod }}</p>
           </div>
         </div>
       </div>
@@ -31,7 +32,7 @@
 
 <script>
 export default {
-  props: ['banner'],
+  props: ['card', 'os'],
 }
 </script>
 
