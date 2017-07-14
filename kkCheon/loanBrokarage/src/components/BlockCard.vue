@@ -1,33 +1,30 @@
 <template>
-  <div v-if="card.external == true && os == 'iOS'"></div>
-  <div v-else>
-    <a :href="card.linkUrl">
-      <div v-bind:id="card.title" class="block-card p-4">
-        <div v-bind:id="card.title" class="table">
-          <div v-bind:id="card.title" class="card-image cell">
-            <div v-bind:id="card.title" class="frame-image mr-3" :style="{ backgroundImage: 'url(' + card.imgUrl + ')' }"></div>
-          </div>
-          <div v-bind:id="card.title" class="card-headline cell align-top w-100">
-            <h6 v-bind:id="card.title" class="h7 mb-1">{{ card.bankName }}</h6>
-            <h1 v-bind:id="card.title" class="h5 bold mb-0">{{ card.title }}</h1>
-          </div>
+  <a :id="card.id" class="link-card" :href="card.linkUrl" :data-product="card.bankName + ' ' + card.productName">
+    <div class="block-card p-4">
+      <div class="table">
+        <div class="card-image cell">
+          <div class="frame-image mr-3" :style="{ backgroundImage: 'url(' + card.imgUrl + ')' }"></div>
         </div>
-        <p v-bind:id="card.title" class="gray600-text mb-2">금리<span class="bold ml-1 blue500-text">{{ card.interest }}</span></p>
-        <h2 v-bind:id="card.title" class="h65 mb-3 lh-lose gray700-text text-left">{{ card.subTitle }}</h2>
-        <div v-bind:id="card.title" class="table mb-0">
-          <div v-bind:id="card.title" class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
-            <p v-bind:id="card.title" class="h7 elephant700-text">한도</p>
-            <p v-bind:id="card.title" class="h7 blue500-text bold">최대 {{ card.limitPrice }}</p>
-          </div>
-          <div v-bind:id="card.title" class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
-            <p v-bind:id="card.title" class="h7 elephant700-text">기간</p>
-            <p v-bind:id="card.title" class="h7 blue500-text bold">{{ card.limitPeriod }}</p>
-          </div>
+        <div class="card-headline cell align-top w-100">
+          <h6 class="h7 mb-1">{{ card.bankName }}</h6>
+          <h1 class="h5 bold mb-0">{{ card.productName }}</h1>
         </div>
       </div>
-    </a>
-  </div>
-
+      <p class="gray600-text mb-2">금리<span class="bold ml-1 blue500-text">{{ card.interest }}</span></p>
+      <h2 class="h65 mb-3 lh-lose gray700-text text-left">{{ card.description }}</h2>
+      <div class="table mb-2">
+        <div class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
+          <p class="h7 elephant700-text">한도</p>
+          <p class="h7 blue500-text bold">최대 {{ card.limitPrice }}</p>
+        </div>
+        <div class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
+          <p class="h7 elephant700-text">기간</p>
+          <p class="h7 blue500-text bold">{{ card.limitPeriod }}</p>
+        </div>
+      </div>
+      <p class="h8 gray400-text mb-0">{{ card.notice }}</p>
+    </div>
+  </a>
 </template>
 
 <script>
@@ -57,5 +54,10 @@ export default {
   .cell { display: table-cell; }
   .table p, .table h2 { margin-bottom: 0; }
   .h7 { font-size: 13px; }
+  .h8 {
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+  }
   .lh-lose { line-height: 1.4; }
 </style>

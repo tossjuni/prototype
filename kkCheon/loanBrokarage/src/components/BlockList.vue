@@ -1,19 +1,19 @@
 <template>
-  <div v-if="list.external == true && os == 'iOS'"></div>
-  <div v-else class="bb-1">
-    <a :href="list.linkUrl">
-      <div v-bind:id="list.title" class="block-list px-4 py-4">
-        <h1 v-bind:id="list.title" class="h65 gray800-text d-inline-block mb-2 bold">{{ list.title }} <span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
-        <div v-bind:id="list.title" class="table mb-0 align-top">
-          <div v-bind:id="list.title" class="banner-headline cell mr-3 w-100">
-            <p v-bind:id="list.title" class="blue500-text bold"><span v-bind:id="list.title" class="tag mr-2 gray600-text normal">금리</span>{{ list.interest }}</p>
-            <p v-bind:id="list.title" ><span v-bind:id="list.title" class="tag mr-2 gray600-text">한도</span>최대 {{ list.limitPrice }}</p>
-            <p v-bind:id="list.title" ><span v-bind:id="list.title" class="tag mr-2 gray600-text">기간</span>{{ list.limitPeriod }}</p>
+  <div class="bb-1">
+    <a :id="list.id" class="link-list" :href="list.linkUrl" :data-product="list.bankName + ' ' + list.productName">
+      <div class="block-list px-4 py-4">
+        <h1 class="h65 gray800-text d-inline-block mb-2 bold">{{ list.bankName}} {{ list.productName }}<span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
+        <div class="table mb-0 align-top">
+          <div class="banner-headline cell mr-3 w-100">
+            <p class="blue500-text bold"><span class="tag mr-2 gray600-text normal">금리</span>{{ list.interest }}</p>
+            <p ><span class="tag mr-2 gray600-text">한도</span>최대 {{ list.limitPrice }}</p>
+            <p ><span class="tag mr-2 gray600-text">기간</span>{{ list.limitPeriod }}</p>
           </div>
-          <div v-bind:id="list.title" class="banner-image cell text-right align-bottom">
-            <div v-bind:id="list.title" class="frame-image mr-0 d-inline-block align-bottom" :style="{ backgroundImage: 'url(' + list.imgUrl + ')' }"></div>
+          <div class="banner-image cell text-right align-bottom">
+            <div class="frame-image mr-0 d-inline-block align-bottom" :style="{ backgroundImage: 'url(' + list.imgUrl + ')' }"></div>
           </div>
         </div>
+        <p class="h8 gray400-text mb-0 mt-2">{{ list.notice }}</p>
       </div>
     </a>
   </div>
@@ -51,6 +51,11 @@ export default {
     padding: 1px 4px;
     border-radius: 2px;
     display: inline-block;
+  }
+  .h8 {
+    font-size: 10px;
+    /* text-align: center; */
+    /* position: absolute; */
   }
   p {
     font-size: 14px;
