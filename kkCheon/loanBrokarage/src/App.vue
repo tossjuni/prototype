@@ -10,7 +10,6 @@
             </div>
             <carousel-3d
                     :autoplay="false"
-
                     :controls-visible="false"
                     :clickable="false"
                     :autoplayTimeout="4000"
@@ -54,15 +53,15 @@ export default {
         {
           key: '1',
           id: 'citibank-worker-loan',
-          productName: '직장인 신용대출',
+          productName: '온라인 직장인 신용대출',
           bankName: '씨티은행',
-          description: 'Toss 제휴코드 "007055"를 입력하면 0.5% 금리 할인',
+          description: '제휴코드 007055 입력시 0.5%p할인',
           imgUrl: require('./assets/icon-citi.png'),
           interest: '최저 연 3.0%',
-          limitPrice: '1.4억',
+          interestCondition: '금융채  3개월 기준금리 + 연 1.65%p, 2017년 7월 7일 현재',
+          limitPrice: '1억 4천만원',
           limitPeriod: '최대 60개월',
           external: false,
-          notice: '',
           linkUrl: 'supertoss://web?url=' + Urlencode('http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078', 'gbk') + '&external=true'
         },
         {
@@ -126,15 +125,16 @@ export default {
         {
           key: '0',
           id: 'citibank-worker-loan',
-          productName: '직장인 신용대출',
+          productName: '온라인 직장인 신용대출',
           bankName: '씨티은행',
           description: 'Toss 제휴코드 "007055"를 입력하면 0.5%p 금리 할인',
           imgUrl: require('./assets/icon-citi.png'),
           interest: '최저 연 3.0%',
-          limitPrice: '1.4억',
+          limitPrice: '1억 4천만원',
           limitPeriod: '최대 60개월',
           external: false,
-          notice: 'Toss 제휴코드 "007055"를 입력하면 0.5% 금리 할인.',
+          interestCondition: '금융채  3개월 기준금리 + 연 1.65%p, 2017년 7월 7일 현재',
+          notice: 'Toss 제휴코드 "007055"를 입력하면 0.5%p 금리 할인',
           promotion: true,
           linkUrl: 'supertoss://web?url=' + Urlencode('http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078', 'gbk') + '&external=true'
         },
@@ -149,6 +149,7 @@ export default {
           limitPrice: '1,000만원',
           limitPeriod: '최대 60개월',
           external: false,
+          promotion: true,
           notice: '저축은행중앙회 심의필 2017-00439호(2017년 7월 07일)',
           linkUrl: 'supertoss://web?url=' + Urlencode('http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078', 'gbk') + '&external=true'
         },
@@ -163,6 +164,7 @@ export default {
           limitPrice: '1억원',
           limitPeriod: '최대 84개월',
           external: false,
+          promotion: true,
           notice: '저축은행중앙회 심의필 2017-00439호(2017년 7월 07일)',
           linkUrl: 'supertoss://web?url=' + Urlencode('http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710381', 'gbk') + '&external=true'
         },

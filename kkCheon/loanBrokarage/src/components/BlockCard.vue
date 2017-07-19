@@ -11,7 +11,10 @@
         </div>
       </div>
       <p class="gray600-text mb-2">금리<span class="bold ml-1 blue500-text">{{ card.interest }}</span></p>
-      <h2 class="h65 mb-3 lh-lose gray700-text text-left">{{ card.description }}</h2>
+      <span class="h8 absolute gray400-text mb-0" style="margin-top:-13px">{{ card.interestCondition }}</span>
+      <div class="desc-box mb-3 table">
+        <h2 class="h65 mb-0 lh-lose gray700-text text-left d-table-cell align-middle">{{ card.description }}</h2>
+      </div>
       <div class="table mb-2">
         <div class="card-detail-2 w-40 cell bl-2-gray200 pl-3">
           <p class="h7 elephant700-text">한도</p>
@@ -22,7 +25,6 @@
           <p class="h7 blue500-text bold">{{ card.limitPeriod }}</p>
         </div>
       </div>
-      <p class="h8 gray400-text mb-0">{{ card.notice }}</p>
     </div>
   </a>
 </template>
@@ -57,7 +59,10 @@ export default {
   .h8 {
     font-size: 10px;
     text-align: center;
+  }
+  .absolute {
     position: absolute;
   }
   .lh-lose { line-height: 1.4; }
+  .desc-box { min-height: 44px; }
 </style>

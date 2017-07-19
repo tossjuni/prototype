@@ -2,10 +2,13 @@
   <div class="bb-1">
     <a :id="list.id" class="link-list" :href="list.linkUrl" :data-product="list.bankName + ' ' + list.productName">
       <div class="block-list px-4 py-4">
-        <h1 class="h65 gray800-text d-inline-block mb-2 bold">{{ list.bankName}} {{ list.productName }}<span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
+        <h1 class="h65 gray800-text d-inline-block mb-3 bold">{{ list.bankName}} {{ list.productName }}<span class="tag-red mx-1" v-if="list.promotion">금리 할인중</span></h1>
         <div class="table mb-0 align-top">
           <div class="banner-headline cell mr-3 w-100">
-            <p class="blue500-text bold"><span class="tag mr-2 gray600-text normal">금리</span>{{ list.interest }}</p>
+            <p class="blue500-text bold">
+              <span class="tag mr-2 gray600-text normal">금리</span>{{ list.interest }}
+              <p class="h8 gray400-text mb-0">{{ list.interestCondition }}</p>
+            </p>
             <p ><span class="tag mr-2 gray600-text">한도</span>최대 {{ list.limitPrice }}</p>
             <p ><span class="tag mr-2 gray600-text">기간</span>{{ list.limitPeriod }}</p>
           </div>
