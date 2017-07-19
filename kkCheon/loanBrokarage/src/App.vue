@@ -256,6 +256,11 @@ export default {
 
 <style>
   @import 'https://toss.im/frame/assets/stylesheets/tossframe-2.0.4.css';
+  html,body {
+    -webkit-overflow-scrolling : touch !important;
+    overflow: auto !important;
+    height: 100% !important;
+  }
   *, h1, h2, h3, h4, h5, h6 { word-break: keep-all; }
   a, a:hover, a:active, a:focus { text-decoration: none; color: #3d424e; }
   .carousel-3d-container{
