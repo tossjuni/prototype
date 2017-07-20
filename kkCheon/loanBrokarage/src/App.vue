@@ -62,7 +62,7 @@ export default {
           limitPrice: '1억 4천만원',
           limitPeriod: '최대 60개월',
           external: false,
-          linkUrl: 'supertoss://web?url=' + Urlencode('http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078', 'gbk') + '&external=true'
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://loanbrokerage-citi-promotion-landin.netlify.com/', 'gbk') + '&external=true'
         },
         {
           key: '2',
@@ -136,7 +136,7 @@ export default {
           interestCondition: '금융채  3개월 기준금리 + 연 1.65%p, 2017년 7월 7일 현재',
           notice: 'Toss 제휴코드 "007055"를 입력하면 0.5%p 금리 할인',
           promotion: true,
-          linkUrl: 'supertoss://web?url=' + Urlencode('http://toss.babilloan.com/APCMOBprd0102g.web?prodCd=710078', 'gbk') + '&external=true'
+          linkUrl: 'supertoss://web?url=' + Urlencode('https://loanbrokerage-citi-promotion-landin.netlify.com/', 'gbk') + '&external=true'
         },
         {
           key: '1',
